@@ -1,4 +1,4 @@
-package org.jqassistant.contrib.plugin.contextmapper.report;
+package org.jqassistant.plugin.contextmapper.report;
 
 import com.buschmais.jqassistant.core.rule.api.model.ExecutableRule;
 import guru.nidi.graphviz.engine.Format;

@@ -1,4 +1,4 @@
-package org.jqassistant.contrib.plugin.contextmapper.report;
+package org.jqassistant.plugin.contextmapper.report;
 
 import com.buschmais.jqassistant.core.report.api.model.Result;
 import com.buschmais.jqassistant.core.rule.api.model.ExecutableRule;
@@ -13,10 +13,10 @@ import org.contextmapper.contextmap.generator.model.UpstreamDownstreamRelationsh
 import org.contextmapper.contextmap.generator.model.UpstreamPatterns;
 import org.contextmapper.dsl.contextMappingDSL.DownstreamRole;
 import org.contextmapper.dsl.contextMappingDSL.UpstreamRole;
-import org.jqassistant.contrib.plugin.contextmapper.model.BoundedContextBaseDescriptor;
-import org.jqassistant.contrib.plugin.contextmapper.model.BoundedContextDependencyDescriptor;
-import org.jqassistant.contrib.plugin.contextmapper.model.BoundedContextDependencyType;
-import org.jqassistant.contrib.plugin.contextmapper.report.ContextMapperDiagram.ContextMapperDiagramBuilder;
+import org.jqassistant.plugin.contextmapper.model.BoundedContextBaseDescriptor;
+import org.jqassistant.plugin.contextmapper.model.BoundedContextDependencyDescriptor;
+import org.jqassistant.plugin.contextmapper.model.BoundedContextDependencyType;
+import org.jqassistant.plugin.contextmapper.report.ContextMapperDiagram.ContextMapperDiagramBuilder;
 
 import java.util.Arrays;
 import java.util.Comparator;
@@ -29,11 +29,6 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static org.contextmapper.dsl.contextMappingDSL.DownstreamRole.ANTICORRUPTION_LAYER;
-import static org.jqassistant.contrib.plugin.contextmapper.model.BoundedContextDependencyType.CUSTOMER_SUPPLIER;
-import static org.jqassistant.contrib.plugin.contextmapper.model.BoundedContextDependencyType.PARTNERSHIP;
-import static org.jqassistant.contrib.plugin.contextmapper.model.BoundedContextDependencyType.SHARED_KERNEL;
-import static org.jqassistant.contrib.plugin.contextmapper.model.BoundedContextDependencyType.UPSTREAM_DOWNSTREAM;
-import static org.jqassistant.contrib.plugin.contextmapper.model.BoundedContextDependencyType.getByType;
 
 /**
  * Generator to create a Context Map based on a Cypher Query Result.
@@ -69,16 +64,16 @@ public class ContextMapGenerator {
     private Optional<Relationship> createRelationship(BoundedContextDependencyDescriptor dependency, Map<String, BoundedContext> boundedContextMap) {
         BoundedContext source = boundedContextMap.get(dependency.getSource().getName());
         BoundedContext target = boundedContextMap.get(dependency.getTarget().getName());
-        BoundedContextDependencyType type = getByType(dependency.getType());
+        BoundedContextDependencyType type = BoundedContextDependencyType.getByType(dependency.getType());
 
         Relationship result = null;
         if (type == null) {
             log.warn("Unknown bounded context dependency type: {}. Skipping relation.", dependency.getType());
-        } else if (type == PARTNERSHIP) {
+        } else if (type == BoundedContextDependencyType.PARTNERSHIP) {
             result = new Partnership(source, target);
-        } else if (type == SHARED_KERNEL) {
+        } else if (type == BoundedContextDependencyType.SHARED_KERNEL) {
             result = new SharedKernel(source, target);
-        } else if (type == CUSTOMER_SUPPLIER || type == UPSTREAM_DOWNSTREAM) {
+        } else if (type == BoundedContextDependencyType.CUSTOMER_SUPPLIER || type == BoundedContextDependencyType.UPSTREAM_DOWNSTREAM) {
             DownstreamPatterns[] downstreamPatterns = Arrays.stream(dependency.getSourceRoles() != null ? dependency.getSourceRoles() : new String[0])
                     .map(DownstreamRole::get)
                     .filter(Objects::nonNull)
@@ -93,7 +88,7 @@ public class ContextMapGenerator {
             // the source is the downstream system
             // the target is the upstream system
             result = new UpstreamDownstreamRelationship(target, source)
-                    .setCustomerSupplier(type == CUSTOMER_SUPPLIER)
+                    .setCustomerSupplier(type == BoundedContextDependencyType.CUSTOMER_SUPPLIER)
                     .setDownstreamPatterns(downstreamPatterns)
                     .setUpstreamPatterns(upstreamPatterns);
         }

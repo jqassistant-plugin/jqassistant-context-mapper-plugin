@@ -10,43 +10,24 @@ This gets even easier in companion wiht jMolecules [2] and the existing jQAssist
 
 == Using the jqassistant-context-mapper-plugin
 
-To be able to use the plug-in, following dependency needs to be defined in the `jqassistant-maven-plugin`'.
+To be able to use the plug-in, it must be speified as a plug-in to jQAssistant.
 Additionally, it must be configured as a scan-include where jQAssistant can find the `.cml`-files.
 
 NOTE: The versions of jQAssistant and the plug-in needs to be set accordingly.
 
 NOTE: In this example, the `.cml`-files reside in `src/main/context-mapper`.
 
-[source, xml]
+[source, yaml]
 ----
-<plugin>
-    <groupId>com.buschmais.jqassistant</groupId>
-    <artifactId>jqassistant-maven-plugin</artifactId>
-    <version>${jqassistant.version}</version>
-    <executions>
-        <execution>
-            <id>default-cli</id>
-            <goals>
-                <goal>scan</goal>
-                <goal>analyze</goal>
-            </goals>
-            <configuration>
-                <scanIncludes>
-                    <scanInclude>
-                        <path>${project.basedir}/src/main/context-mapper</path> // <2>
-                    </scanInclude>
-                </scanIncludes>
-            </configuration>
-        </execution>
-    </executions>
-    <dependencies>
-        <dependency> // <1>
-            <groupId>org.jqassistant.contrib.plugin</groupId>
-            <artifactId>jqassistant-context-mapper-plugin</artifactId>
-            <version>${jqassistant.context-mapper-plugin.version}</version>
-        </dependency>
-    </dependencies>
-</plugin>
+jqassistant:
+  plugins:
+    - group-id: org.jqassistant.plugin <1>
+      artifact-id: jqassistant-context-mapper-plugin
+      version: ${jqassistant.context-mapper-plugin.version}
+  scan:
+    include:
+      files:
+        - ${project.basedir}/src/main/context-mapper <2>
 ----
 <1> Dependency to the Context Mapper plug-in
 <2> Location of the `.cml`-files
@@ -197,4 +178,4 @@ Resources:
 
 * [1] https://contextmapper.org/
 * [2] https://github.com/xmolecules/jmolecules
-* [3] https://github.com/jqassistant-contrib/jqassistant-jmolecules-plugin
+* [3] https://github.com/jqassistant-plugin/jqassistant-jmolecules-plugin

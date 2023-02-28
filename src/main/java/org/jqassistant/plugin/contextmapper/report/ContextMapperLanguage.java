@@ -1,4 +1,4 @@
-package org.jqassistant.contrib.plugin.contextmapper.report;
+package org.jqassistant.plugin.contextmapper.report;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -9,9 +9,9 @@ import com.buschmais.jqassistant.core.report.api.SourceProvider;
 import com.buschmais.jqassistant.core.report.api.model.Language;
 import com.buschmais.jqassistant.core.report.api.model.LanguageElement;
 
-import org.jqassistant.contrib.plugin.contextmapper.model.BoundedContextBaseDescriptor;
-import org.jqassistant.contrib.plugin.contextmapper.model.DomainDescriptor;
-import org.jqassistant.contrib.plugin.contextmapper.model.SubdomainDescriptor;
+import org.jqassistant.plugin.contextmapper.model.BoundedContextBaseDescriptor;
+import org.jqassistant.plugin.contextmapper.model.DomainDescriptor;
+import org.jqassistant.plugin.contextmapper.model.SubdomainDescriptor;
 
 /**
  * Context Mapper language defining supported language elements.

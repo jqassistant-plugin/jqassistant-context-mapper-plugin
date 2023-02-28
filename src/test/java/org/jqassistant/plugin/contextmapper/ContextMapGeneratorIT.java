@@ -1,4 +1,4 @@
-package org.jqassistant.contrib.plugin.contextmapper;
+package org.jqassistant.plugin.contextmapper;
 
 import com.buschmais.jqassistant.core.report.api.model.Result;
 import com.buschmais.jqassistant.core.rule.api.model.Concept;
@@ -15,7 +15,7 @@ import org.contextmapper.contextmap.generator.model.Partnership;
 import org.contextmapper.contextmap.generator.model.Relationship;
 import org.contextmapper.contextmap.generator.model.SharedKernel;
 import org.contextmapper.contextmap.generator.model.UpstreamDownstreamRelationship;
-import org.jqassistant.contrib.plugin.contextmapper.report.ContextMapGenerator;
+import org.jqassistant.plugin.contextmapper.report.ContextMapGenerator;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;

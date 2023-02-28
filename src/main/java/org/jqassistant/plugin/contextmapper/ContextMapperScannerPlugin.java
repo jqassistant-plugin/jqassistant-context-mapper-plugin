@@ -1,4 +1,4 @@
-package org.jqassistant.contrib.plugin.contextmapper;
+package org.jqassistant.plugin.contextmapper;
 
 import com.buschmais.jqassistant.core.scanner.api.Scanner;
 import com.buschmais.jqassistant.core.scanner.api.ScannerContext;
@@ -13,13 +13,11 @@ import org.contextmapper.dsl.contextMappingDSL.*;
 import org.contextmapper.dsl.standalone.ContextMapperStandaloneSetup;
 import org.contextmapper.dsl.standalone.StandaloneContextMapperAPI;
 import org.eclipse.xtext.EcoreUtil2;
-import org.jqassistant.contrib.plugin.contextmapper.model.*;
+import org.jqassistant.plugin.contextmapper.model.*;
 
 import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
-
-import static org.jqassistant.contrib.plugin.contextmapper.model.BoundedContextDependencyType.*;
 
 /**
  * Scanner plug-in to enrich the graph based on a .cml-file.
@@ -105,19 +103,19 @@ public class ContextMapperScannerPlugin extends AbstractScannerPlugin<FileResour
                         String[] sourceRoles = ((UpstreamDownstreamRelationship) r).getDownstreamRoles().stream().map(DownstreamRole::getLiteral).toArray(String[]::new);
                         String[] targetRoles = ((UpstreamDownstreamRelationship) r).getUpstreamRoles().stream().map(UpstreamRole::getLiteral).toArray(String[]::new);
 
-                        createBoundedContextRelationship(store, dS, sourceRoles, uS, targetRoles, (r instanceof CustomerSupplierRelationship) ? CUSTOMER_SUPPLIER.getType() : UPSTREAM_DOWNSTREAM.getType());
+                        createBoundedContextRelationship(store, dS, sourceRoles, uS, targetRoles, (r instanceof CustomerSupplierRelationship) ? BoundedContextDependencyType.CUSTOMER_SUPPLIER.getType() : BoundedContextDependencyType.UPSTREAM_DOWNSTREAM.getType());
                     });
                 });
             } else if (r instanceof SharedKernel) {
                 getBoundedContextByName(boundedContextDescriptors, ((SharedKernel) r).getParticipant1().getName()).ifPresent(p1 -> {
                     getBoundedContextByName(boundedContextDescriptors, ((SharedKernel) r).getParticipant2().getName()).ifPresent(p2 -> {
-                        createBoundedContextRelationship(store, p1, p2, SHARED_KERNEL.getType());
+                        createBoundedContextRelationship(store, p1, p2, BoundedContextDependencyType.SHARED_KERNEL.getType());
                     });
                 });
             } else if (r instanceof Partnership) {
                 getBoundedContextByName(boundedContextDescriptors, ((Partnership) r).getParticipant1().getName()).ifPresent(p1 -> {
                     getBoundedContextByName(boundedContextDescriptors, ((Partnership) r).getParticipant2().getName()).ifPresent(p2 -> {
-                        createBoundedContextRelationship(store, p1, p2, PARTNERSHIP.getType());
+                        createBoundedContextRelationship(store, p1, p2, BoundedContextDependencyType.PARTNERSHIP.getType());
                     });
                 });
             }

@@ -1,15 +1,15 @@
-package org.jqassistant.contrib.plugin.contextmapper;
+package org.jqassistant.plugin.contextmapper;
 
 import com.buschmais.jqassistant.core.scanner.api.DefaultScope;
 import com.buschmais.jqassistant.core.store.api.model.Descriptor;
 import com.buschmais.jqassistant.core.test.plugin.AbstractPluginIT;
 import lombok.Builder;
 import lombok.Singular;
-import org.jqassistant.contrib.plugin.contextmapper.model.BoundedContextDefinesDependency;
-import org.jqassistant.contrib.plugin.contextmapper.model.BoundedContextDescriptor;
-import org.jqassistant.contrib.plugin.contextmapper.model.ContextMapDescriptor;
-import org.jqassistant.contrib.plugin.contextmapper.model.ContextMapperDescriptor;
-import org.jqassistant.contrib.plugin.contextmapper.model.ContextMapperFileDescriptor;
+import org.jqassistant.plugin.contextmapper.model.BoundedContextDefinesDependency;
+import org.jqassistant.plugin.contextmapper.model.BoundedContextDescriptor;
+import org.jqassistant.plugin.contextmapper.model.ContextMapDescriptor;
+import org.jqassistant.plugin.contextmapper.model.ContextMapperDescriptor;
+import org.jqassistant.plugin.contextmapper.model.ContextMapperFileDescriptor;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -23,10 +23,10 @@ import java.util.Set;
 import java.util.TreeSet;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.jqassistant.contrib.plugin.contextmapper.model.BoundedContextDependencyType.CUSTOMER_SUPPLIER;
-import static org.jqassistant.contrib.plugin.contextmapper.model.BoundedContextDependencyType.PARTNERSHIP;
-import static org.jqassistant.contrib.plugin.contextmapper.model.BoundedContextDependencyType.SHARED_KERNEL;
-import static org.jqassistant.contrib.plugin.contextmapper.model.BoundedContextDependencyType.UPSTREAM_DOWNSTREAM;
+import static org.jqassistant.plugin.contextmapper.model.BoundedContextDependencyType.CUSTOMER_SUPPLIER;
+import static org.jqassistant.plugin.contextmapper.model.BoundedContextDependencyType.PARTNERSHIP;
+import static org.jqassistant.plugin.contextmapper.model.BoundedContextDependencyType.SHARED_KERNEL;
+import static org.jqassistant.plugin.contextmapper.model.BoundedContextDependencyType.UPSTREAM_DOWNSTREAM;
 import static org.mockito.Mockito.*;
 
 public class ContextMapperScannerPluginIT extends AbstractPluginIT {
