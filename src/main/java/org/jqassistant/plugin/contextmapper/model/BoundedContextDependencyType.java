@@ -1,4 +1,4 @@
-package org.jqassistant.contrib.plugin.contextmapper.model;
+package org.jqassistant.plugin.contextmapper.model;
 
 import lombok.Getter;
 

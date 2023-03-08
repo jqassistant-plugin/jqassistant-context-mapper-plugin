@@ -1,4 +1,4 @@
-package org.jqassistant.contrib.plugin.contextmapper;
+package org.jqassistant.plugin.contextmapper;
 
 import com.buschmais.jqassistant.core.report.api.ReportContext;
 import com.buschmais.jqassistant.core.report.api.ReportException;
@@ -7,8 +7,8 @@ import com.buschmais.jqassistant.core.report.api.model.Result;
 import com.buschmais.jqassistant.core.rule.api.model.ExecutableRule;
 import guru.nidi.graphviz.engine.Format;
 import org.contextmapper.contextmap.generator.model.ContextMap;
-import org.jqassistant.contrib.plugin.contextmapper.report.ContextMapGenerator;
-import org.jqassistant.contrib.plugin.contextmapper.report.ContextMapImageRenderer;
+import org.jqassistant.plugin.contextmapper.report.ContextMapGenerator;
+import org.jqassistant.plugin.contextmapper.report.ContextMapImageRenderer;
 
 import java.io.File;
 import java.io.IOException;

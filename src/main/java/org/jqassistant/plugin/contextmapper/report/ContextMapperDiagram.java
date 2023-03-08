@@ -1,10 +1,10 @@
-package org.jqassistant.contrib.plugin.contextmapper.report;
+package org.jqassistant.plugin.contextmapper.report;
 
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Singular;
-import org.jqassistant.contrib.plugin.contextmapper.model.BoundedContextBaseDescriptor;
-import org.jqassistant.contrib.plugin.contextmapper.model.BoundedContextDependencyDescriptor;
+import org.jqassistant.plugin.contextmapper.model.BoundedContextBaseDescriptor;
+import org.jqassistant.plugin.contextmapper.model.BoundedContextDependencyDescriptor;
 
 import java.util.List;
 
