@@ -10,7 +10,7 @@ This gets even easier in companion wiht jMolecules [2] and the existing jQAssist
 
 == Using the jqassistant-context-mapper-plugin
 
-To be able to use the plug-in, it must be speified as a plug-in to jQAssistant.
+To be able to use the plug-in, it must be specified as a plug-in to jQAssistant.
 Additionally, it must be configured as a scan-include where jQAssistant can find the `.cml`-files.
 
 NOTE: The versions of jQAssistant and the plug-in needs to be set accordingly.
