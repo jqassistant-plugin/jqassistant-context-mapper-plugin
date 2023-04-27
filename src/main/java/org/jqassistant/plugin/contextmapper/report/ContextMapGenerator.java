@@ -1,6 +1,8 @@
 package org.jqassistant.plugin.contextmapper.report;
 
+import com.buschmais.jqassistant.core.report.api.model.Column;
 import com.buschmais.jqassistant.core.report.api.model.Result;
+import com.buschmais.jqassistant.core.report.api.model.Row;
 import com.buschmais.jqassistant.core.rule.api.model.ExecutableRule;
 import lombok.extern.slf4j.Slf4j;
 import org.contextmapper.contextmap.generator.model.BoundedContext;
@@ -100,8 +102,9 @@ public class ContextMapGenerator {
 
         Set<BoundedContextBaseDescriptor> bCs = new TreeSet<>(Comparator.comparing(BoundedContextBaseDescriptor::getName));
 
-        for (Map<String, Object> row : result.getRows()) {
-            for (Object value : row.values()) {
+        for (Row row : result.getRows()) {
+            for (Column column : row.getColumns().values()) {
+                Object value = column.getValue();
                 if (value instanceof BoundedContextDependencyDescriptor) {
                     builder.relationship((BoundedContextDependencyDescriptor) value);
                 } else if (value instanceof BoundedContextBaseDescriptor) {

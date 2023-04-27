@@ -34,8 +34,12 @@
         <developerConnection>scm:git:https://github.com/jqassistant-plugin/jqassistant-context-mapper-plugin.git
         </developerConnection>
         <url>https://github.com/jqassistant-plugin/jqassistant-context-mapper-plugin</url>
-      <tag>1.1.0-M1</tag>
-  </scm>
+        <tag>1.1.0-M1</tag>
+    </scm>
+
+    <properties>
+        <com.buschmais.jqassistant.version>2.0.0</com.buschmais.jqassistant.version>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -49,6 +53,7 @@
         <dependency>
             <groupId>com.buschmais.jqassistant.plugin</groupId>
             <artifactId>common</artifactId>
+            <version>${com.buschmais.jqassistant.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>

@@ -15,7 +15,6 @@ import java.io.File;
 
 public class ContextMapperReportPluginIT extends AbstractPluginIT {
 
-    //@TestStore(type = TestStore.Type.REMOTE)
     @Test
     public void scan() throws RuleException {
         File testFile = new File(getClassesDirectory(ContextMapperScannerPluginIT.class), "Insurance-Example-Stage-1.cml");
