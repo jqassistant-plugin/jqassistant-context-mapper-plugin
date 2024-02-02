@@ -1,4 +1,4 @@
-package org.jqassistant.plugin.contextmapper;
+package org.jqassistant.plugin.contextmapper.scanner;
 
 import com.buschmais.jqassistant.core.scanner.api.DefaultScope;
 import com.buschmais.jqassistant.core.store.api.model.Descriptor;
@@ -29,7 +29,7 @@ import static org.jqassistant.plugin.contextmapper.model.BoundedContextDependenc
 import static org.jqassistant.plugin.contextmapper.model.BoundedContextDependencyType.UPSTREAM_DOWNSTREAM;
 import static org.mockito.Mockito.*;
 
-public class ContextMapperScannerPluginIT extends AbstractPluginIT {
+public class InsuranceContextMapIT extends AbstractPluginIT {
 
     Map<String, BoundedContextDescriptor> bCDescriptors = new HashMap<>();
 
@@ -83,7 +83,7 @@ public class ContextMapperScannerPluginIT extends AbstractPluginIT {
     }
 
     private ContextMapDescriptor scanFileAndAssert(String fileName) {
-        File testFile = new File(getClassesDirectory(ContextMapperScannerPluginIT.class), fileName);
+        File testFile = new File(getClassesDirectory(InsuranceContextMapIT.class), fileName);
         Descriptor descriptor = getScanner().scan(testFile, fileName, DefaultScope.NONE);
         assertThat(descriptor).isInstanceOf(ContextMapperDescriptor.class);
         assertThat(descriptor).isInstanceOf(ContextMapperFileDescriptor.class);

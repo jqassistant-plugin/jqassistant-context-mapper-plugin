@@ -1,0 +1,12 @@
+ContextMap Muehle {
+    type = SYSTEM_LANDSCAPE
+    state = TO_BE
+
+    contains Mehl
+    contains Sack
+
+    Mhl [U] -> [D] Sack
+}
+
+BoundedContext Mehl
+BoundedContext Sack
