@@ -1,4 +1,4 @@
-package org.jqassistant.plugin.contextmapper;
+package org.jqassistant.plugin.contextmapper.report;
 
 import com.buschmais.jqassistant.core.report.api.model.Result;
 import com.buschmais.jqassistant.core.rule.api.model.Concept;
@@ -15,7 +15,7 @@ import org.contextmapper.contextmap.generator.model.Partnership;
 import org.contextmapper.contextmap.generator.model.Relationship;
 import org.contextmapper.contextmap.generator.model.SharedKernel;
 import org.contextmapper.contextmap.generator.model.UpstreamDownstreamRelationship;
-import org.jqassistant.plugin.contextmapper.report.ContextMapGenerator;
+import org.jqassistant.plugin.contextmapper.scanner.InsuranceContextMapIT;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
@@ -35,7 +35,7 @@ public class ContextMapGeneratorIT extends AbstractPluginIT {
 
     @Test
     public void testContextMapperNodes() throws RuleException {
-        File testFile = new File(getClassesDirectory(ContextMapperScannerPluginIT.class), "Insurance-Example-Stage-2.cml");
+        File testFile = new File(getClassesDirectory(InsuranceContextMapIT.class), "Insurance-Example-Stage-2.cml");
 
         getScanner().scan(testFile, "Insurance-Example-Stage-2.cml", DefaultScope.NONE);
 

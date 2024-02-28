@@ -8,6 +8,7 @@ import com.buschmais.jqassistant.core.store.api.Store;
 import com.buschmais.jqassistant.plugin.common.api.model.FileDescriptor;
 import com.buschmais.jqassistant.plugin.common.api.scanner.AbstractScannerPlugin;
 import com.buschmais.jqassistant.plugin.common.api.scanner.filesystem.FileResource;
+import lombok.extern.slf4j.Slf4j;
 import org.contextmapper.dsl.cml.CMLResource;
 import org.contextmapper.dsl.contextMappingDSL.*;
 import org.contextmapper.dsl.standalone.ContextMapperStandaloneSetup;
@@ -25,6 +26,7 @@ import java.util.stream.Collectors;
  * @author Stephan Pirnbaum
  */
 @Requires(FileDescriptor.class)
+@Slf4j
 public class ContextMapperScannerPlugin extends AbstractScannerPlugin<FileResource, ContextMapperDescriptor> {
 
     @Override
@@ -98,8 +100,8 @@ public class ContextMapperScannerPlugin extends AbstractScannerPlugin<FileResour
 
         contextMap.getRelationships().forEach(r -> {
             if (r instanceof UpstreamDownstreamRelationship) {
-                getBoundedContextByName(boundedContextDescriptors, ((UpstreamDownstreamRelationship) r).getUpstream().getName()).ifPresent(uS -> {
-                    getBoundedContextByName(boundedContextDescriptors, ((UpstreamDownstreamRelationship) r).getDownstream().getName()).ifPresent(dS -> {
+                getBoundedContextByName(boundedContextDescriptors, contextMap.getName(), ((UpstreamDownstreamRelationship) r).getUpstream().getName()).ifPresent(uS -> {
+                    getBoundedContextByName(boundedContextDescriptors, contextMap.getName(), ((UpstreamDownstreamRelationship) r).getDownstream().getName()).ifPresent(dS -> {
                         String[] sourceRoles = ((UpstreamDownstreamRelationship) r).getDownstreamRoles().stream().map(DownstreamRole::getLiteral).toArray(String[]::new);
                         String[] targetRoles = ((UpstreamDownstreamRelationship) r).getUpstreamRoles().stream().map(UpstreamRole::getLiteral).toArray(String[]::new);
 
@@ -107,14 +109,14 @@ public class ContextMapperScannerPlugin extends AbstractScannerPlugin<FileResour
                     });
                 });
             } else if (r instanceof SharedKernel) {
-                getBoundedContextByName(boundedContextDescriptors, ((SharedKernel) r).getParticipant1().getName()).ifPresent(p1 -> {
-                    getBoundedContextByName(boundedContextDescriptors, ((SharedKernel) r).getParticipant2().getName()).ifPresent(p2 -> {
+                getBoundedContextByName(boundedContextDescriptors, contextMap.getName(), ((SharedKernel) r).getParticipant1().getName()).ifPresent(p1 -> {
+                    getBoundedContextByName(boundedContextDescriptors, contextMap.getName(), ((SharedKernel) r).getParticipant2().getName()).ifPresent(p2 -> {
                         createBoundedContextRelationship(store, p1, p2, BoundedContextDependencyType.SHARED_KERNEL.getType());
                     });
                 });
             } else if (r instanceof Partnership) {
-                getBoundedContextByName(boundedContextDescriptors, ((Partnership) r).getParticipant1().getName()).ifPresent(p1 -> {
-                    getBoundedContextByName(boundedContextDescriptors, ((Partnership) r).getParticipant2().getName()).ifPresent(p2 -> {
+                getBoundedContextByName(boundedContextDescriptors, contextMap.getName(), ((Partnership) r).getParticipant1().getName()).ifPresent(p1 -> {
+                    getBoundedContextByName(boundedContextDescriptors, contextMap.getName(), ((Partnership) r).getParticipant2().getName()).ifPresent(p2 -> {
                         createBoundedContextRelationship(store, p1, p2, BoundedContextDependencyType.PARTNERSHIP.getType());
                     });
                 });
@@ -139,7 +141,11 @@ public class ContextMapperScannerPlugin extends AbstractScannerPlugin<FileResour
                 .findFirst();
     }
 
-    private Optional<BoundedContextDescriptor> getBoundedContextByName(List<BoundedContextDescriptor> boundedContextDescriptors, String name) {
+    private Optional<BoundedContextDescriptor> getBoundedContextByName(List<BoundedContextDescriptor> boundedContextDescriptors, String contextMapName, String name) {
+        if (name == null) {
+            log.warn("Detected undefined Bounded Context in Relationship of Context Map {}, skipping Relationship.", contextMapName);
+            return Optional.empty();
+        }
         return boundedContextDescriptors.stream()
                 .filter(bC -> name.equals(bC.getName()))
                 .findFirst();
