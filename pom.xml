@@ -51,6 +51,11 @@
             <artifactId>common</artifactId>
         </dependency>
         <dependency>
+            <groupId>com.buschmais.xo</groupId>
+            <artifactId>xo.api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
             <groupId>org.contextmapper</groupId>
             <artifactId>context-mapper-dsl</artifactId>
             <version>6.6.1</version>
@@ -130,11 +135,13 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>log4j-over-slf4j</artifactId>
             <version>${org.slf4j.version}</version>
+            <scope>runtime</scope>
             <exclusions>
                 <exclusion>
                     <artifactId>slf4j-api</artifactId>
@@ -160,17 +167,14 @@
             <artifactId>embedded</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.buschmais.jqassistant.plugin</groupId>
-            <artifactId>common</artifactId>
-            <type>test-jar</type>
-        </dependency>
-        <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-params</artifactId>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.assertj</groupId>
