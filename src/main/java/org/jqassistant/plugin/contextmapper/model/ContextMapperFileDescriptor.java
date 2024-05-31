@@ -15,4 +15,7 @@ public interface ContextMapperFileDescriptor extends ContextMapperDescriptor, Fi
     @Relation("CONTAINS")
     List<ContextMapDescriptor> getContextMaps();
 
+    @Relation("DEFINES")
+    List<DomainDescriptor> getDomains();
+
 }
