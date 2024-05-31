@@ -42,6 +42,12 @@ public class FullPropertyMapIT extends AbstractPluginIT {
         assertThat(boundedContextDescriptor.getImplementationTechnology()).isEqualTo("Java, JEE Application");
         assertThat(boundedContextDescriptor.getResponsibilities()).containsExactlyInAnyOrderElementsOf(Arrays.asList("Responsibility 1", "Responsibility 2"));
         assertThat(boundedContextDescriptor.getKnowledgeLevel()).isEqualTo("CONCRETE");
+        assertThat(contextMapper.getDomains()).hasSize(1);
+        assertThat(contextMapper.getDomains().get(0).getName()).isEqualTo("Domain1");
+        assertThat(contextMapper.getDomains().get(0).getDomainVisionStatement()).isEqualTo("Domain 1 domainVisionStatement");
+        assertThat(contextMapper.getDomains().get(0).getSubdomains()).hasSize(1);
+        assertThat(contextMapper.getDomains().get(0).getSubdomains().get(0).getName()).isEqualTo("Subdomain1");
+        assertThat(contextMapper.getDomains().get(0).getSubdomains().get(0).getDomainVisionStatement()).isEqualTo("Subdomain 1 domainVisionStatement");
         return contextMapper.getContextMaps().get(0);
     }
 

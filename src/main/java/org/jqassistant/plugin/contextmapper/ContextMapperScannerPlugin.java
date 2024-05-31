@@ -45,7 +45,7 @@ public class ContextMapperScannerPlugin extends AbstractScannerPlugin<FileResour
         ContextMapperFileDescriptor contextMapperDescriptor = store.addDescriptorType(context.getCurrentDescriptor(), ContextMapperFileDescriptor.class);
 
         List<DomainDescriptor> domains = EcoreUtil2.eAllOfType(cml.getContextMappingModel(), Domain.class).stream()
-                .map(d -> processDomain(store, d))
+                .map(d -> processDomain(store, d, contextMapperDescriptor))
                 .collect(Collectors.toList());
 
         List<BoundedContextDescriptor> boundedContexts = EcoreUtil2.eAllOfType(cml.getContextMappingModel(), BoundedContext.class).stream()
@@ -59,8 +59,9 @@ public class ContextMapperScannerPlugin extends AbstractScannerPlugin<FileResour
         return contextMapperDescriptor;
     }
 
-    private DomainDescriptor processDomain(Store store, Domain domain) {
+    private DomainDescriptor processDomain(Store store, Domain domain, ContextMapperFileDescriptor contextMapperFileDescriptor) {
         DomainDescriptor domainDescriptor = store.create(DomainDescriptor.class);
+        contextMapperFileDescriptor.getDomains().add(domainDescriptor);
         domainDescriptor.setName(domain.getName());
         if (domain.getDomainVisionStatement() != null) {
             domainDescriptor.setDomainVisionStatement(domain.getDomainVisionStatement());
