@@ -14,6 +14,10 @@ import static org.jqassistant.plugin.contextmapper.report.ContextMapperLanguage.
 @Label("Subdomain")
 public interface SubdomainDescriptor extends ContextMapperDescriptor {
 
+    String getDomainVisionStatement();
+
+    void setDomainVisionStatement(String domainVisionStatement);
+
     String getName();
 
     void setName(String name);

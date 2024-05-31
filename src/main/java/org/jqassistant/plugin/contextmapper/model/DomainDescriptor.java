@@ -17,6 +17,10 @@ import static org.jqassistant.plugin.contextmapper.report.ContextMapperLanguage.
 @Label("Domain")
 public interface DomainDescriptor extends ContextMapperDescriptor {
 
+    String getDomainVisionStatement();
+
+    void setDomainVisionStatement(String domainVisionStatement);
+
     String getName();
 
     void setName(String name);

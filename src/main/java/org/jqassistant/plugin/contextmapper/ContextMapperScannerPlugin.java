@@ -62,12 +62,18 @@ public class ContextMapperScannerPlugin extends AbstractScannerPlugin<FileResour
     private DomainDescriptor processDomain(Store store, Domain domain) {
         DomainDescriptor domainDescriptor = store.create(DomainDescriptor.class);
         domainDescriptor.setName(domain.getName());
+        if (domain.getDomainVisionStatement() != null) {
+            domainDescriptor.setDomainVisionStatement(domain.getDomainVisionStatement());
+        }
 
         domain.getSubdomains().forEach(s -> {
             SubdomainDescriptor subdomainDescriptor = store.create(SubdomainDescriptor.class);
             subdomainDescriptor.setName(s.getName());
             if (s.getType() != null) {
                 subdomainDescriptor.setType(s.getType().getName());
+            }
+            if (s.getDomainVisionStatement() != null) {
+                subdomainDescriptor.setDomainVisionStatement(s.getDomainVisionStatement());
             }
             domainDescriptor.getSubdomains().add(subdomainDescriptor);
         });
@@ -80,6 +86,18 @@ public class ContextMapperScannerPlugin extends AbstractScannerPlugin<FileResour
         boundedContextDescriptor.setName(boundedContext.getName());
         if (boundedContext.getType() != null) {
             boundedContextDescriptor.setType(boundedContext.getType().getName());
+        }
+        if (boundedContext.getDomainVisionStatement() != null) {
+            boundedContextDescriptor.setDomainVisionStatement(boundedContext.getDomainVisionStatement());
+        }
+        if (boundedContext.getImplementationTechnology() != null) {
+            boundedContextDescriptor.setImplementationTechnology(boundedContext.getImplementationTechnology());
+        }
+        if (boundedContext.getResponsibilities() != null && !boundedContext.getResponsibilities().isEmpty()) {
+            boundedContextDescriptor.setResponsibilities(boundedContext.getResponsibilities().toArray(String[]::new));
+        }
+        if (boundedContext.getKnowledgeLevel() != null) {
+            boundedContextDescriptor.setKnowledgeLevel(boundedContext.getKnowledgeLevel().getLiteral());
         }
         boundedContext.getImplementedDomainParts().forEach(d -> {
             if (d instanceof Subdomain) {
