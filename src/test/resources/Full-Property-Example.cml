@@ -1,0 +1,26 @@
+/* Example Context Map written with 'ContextMapper DSL' */
+ContextMap FullPropertyMap {
+	type = SYSTEM_LANDSCAPE
+	state = TO_BE
+
+	/* Add bounded contexts to this context map: */
+	contains Context1
+}
+
+/* Bounded Context Definitions */
+BoundedContext Context1 implements Subdomain1 {
+    domainVisionStatement = "Context 1 domainVisionStatement"
+    implementationTechnology = "Java, JEE Application"
+    responsibilities = "Responsibility 1", "Responsibility 2"
+    knowledgeLevel = CONCRETE
+}
+
+/* Domain & Subdomain Definitions */
+Domain Domain1 {
+    domainVisionStatement = "Domain 1 domainVisionStatement"
+
+	Subdomain Subdomain1 {
+		type = CORE_DOMAIN
+		domainVisionStatement = "Subdomain 1 domainVisionStatement"
+	}
+}

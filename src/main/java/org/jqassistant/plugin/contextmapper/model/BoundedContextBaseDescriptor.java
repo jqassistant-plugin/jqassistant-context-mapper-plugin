@@ -18,6 +18,22 @@ import static org.jqassistant.plugin.contextmapper.report.ContextMapperLanguage.
 @Label("BoundedContext")
 public interface BoundedContextBaseDescriptor extends Descriptor {
 
+    String getDomainVisionStatement();
+
+    void setDomainVisionStatement(String domainVisionStatement);
+
+    String getImplementationTechnology();
+
+    void setImplementationTechnology(String implementationTechnology);
+
+    String[] getResponsibilities();
+
+    void setResponsibilities(String[] responsibility);
+
+    String getKnowledgeLevel();
+
+    void setKnowledgeLevel(String knowledgeLevel);
+
     String getName();
 
     void setName(String name);
