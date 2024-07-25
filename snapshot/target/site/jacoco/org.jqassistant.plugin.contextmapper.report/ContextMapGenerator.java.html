@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ContextMapGenerator.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">jqassistant-context-mapper-plugin</a> &gt; <a href="index.source.html" class="el_package">org.jqassistant.plugin.contextmapper.report</a> &gt; <span class="el_source">ContextMapGenerator.java</span></div><h1>ContextMapGenerator.java</h1><pre class="source lang-java linenums">package org.jqassistant.plugin.contextmapper.report;
+
+import com.buschmais.jqassistant.core.report.api.model.Column;
+import com.buschmais.jqassistant.core.report.api.model.Result;
+import com.buschmais.jqassistant.core.report.api.model.Row;
+import com.buschmais.jqassistant.core.rule.api.model.ExecutableRule;
+import lombok.extern.slf4j.Slf4j;
+import org.contextmapper.contextmap.generator.model.BoundedContext;
+import org.contextmapper.contextmap.generator.model.ContextMap;
+import org.contextmapper.contextmap.generator.model.DownstreamPatterns;
+import org.contextmapper.contextmap.generator.model.Partnership;
+import org.contextmapper.contextmap.generator.model.Relationship;
+import org.contextmapper.contextmap.generator.model.SharedKernel;
+import org.contextmapper.contextmap.generator.model.UpstreamDownstreamRelationship;
+import org.contextmapper.contextmap.generator.model.UpstreamPatterns;
+import org.contextmapper.dsl.contextMappingDSL.DownstreamRole;
+import org.contextmapper.dsl.contextMappingDSL.UpstreamRole;
+import org.jqassistant.plugin.contextmapper.model.BoundedContextBaseDescriptor;
+import org.jqassistant.plugin.contextmapper.model.BoundedContextDependencyDescriptor;
+import org.jqassistant.plugin.contextmapper.model.BoundedContextDependencyType;
+import org.jqassistant.plugin.contextmapper.report.ContextMapperDiagram.ContextMapperDiagramBuilder;
+
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.Set;
+import java.util.TreeSet;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import static org.contextmapper.dsl.contextMappingDSL.DownstreamRole.ANTICORRUPTION_LAYER;
+
+/**
+ * Generator to create a Context Map based on a Cypher Query Result.
+ *
+ * @author stephan.pirnbaum
+ */
+<span class="fc" id="L40">@Slf4j</span>
+<span class="fc" id="L41">public class ContextMapGenerator {</span>
+
+    /**
+     * Generate a context map for the given {@link Result}.
+     *
+     * @param result The result to render.
+     * @return The {@link ContextMap}.
+     */
+    public ContextMap generateContextMap(Result&lt;? extends ExecutableRule&gt; result) {
+<span class="fc" id="L50">        ContextMapperDiagram diagram = convert(result);</span>
+<span class="fc" id="L51">        ContextMap contextMap = new ContextMap();</span>
+
+<span class="fc" id="L53">        Map&lt;String, BoundedContext&gt; boundedContextMap = diagram.getBoundedContexts().stream()</span>
+<span class="fc" id="L54">                .map(b -&gt; new BoundedContext(b.getName()))</span>
+<span class="fc" id="L55">                .peek(contextMap::addBoundedContext)</span>
+<span class="fc" id="L56">                .collect(Collectors.toMap(BoundedContext::getName, b -&gt; b));</span>
+
+<span class="fc" id="L58">        diagram.getRelationships().stream()</span>
+<span class="fc" id="L59">                .map(r -&gt; createRelationship(r, boundedContextMap))</span>
+<span class="fc" id="L60">                .flatMap(o -&gt; o.map(Stream::of).orElseGet(Stream::empty))</span>
+<span class="fc" id="L61">                .forEach(contextMap::addRelationship);</span>
+
+<span class="fc" id="L63">        return contextMap;</span>
+    }
+
+    private Optional&lt;Relationship&gt; createRelationship(BoundedContextDependencyDescriptor dependency, Map&lt;String, BoundedContext&gt; boundedContextMap) {
+<span class="fc" id="L67">        BoundedContext source = boundedContextMap.get(dependency.getSource().getName());</span>
+<span class="fc" id="L68">        BoundedContext target = boundedContextMap.get(dependency.getTarget().getName());</span>
+<span class="fc" id="L69">        BoundedContextDependencyType type = BoundedContextDependencyType.getByType(dependency.getType());</span>
+
+<span class="fc" id="L71">        Relationship result = null;</span>
+<span class="pc bpc" id="L72" title="1 of 2 branches missed.">        if (type == null) {</span>
+<span class="nc" id="L73">            log.warn(&quot;Unknown bounded context dependency type: {}. Skipping relation.&quot;, dependency.getType());</span>
+<span class="fc bfc" id="L74" title="All 2 branches covered.">        } else if (type == BoundedContextDependencyType.PARTNERSHIP) {</span>
+<span class="fc" id="L75">            result = new Partnership(source, target);</span>
+<span class="fc bfc" id="L76" title="All 2 branches covered.">        } else if (type == BoundedContextDependencyType.SHARED_KERNEL) {</span>
+<span class="fc" id="L77">            result = new SharedKernel(source, target);</span>
+<span class="pc bpc" id="L78" title="1 of 4 branches missed.">        } else if (type == BoundedContextDependencyType.CUSTOMER_SUPPLIER || type == BoundedContextDependencyType.UPSTREAM_DOWNSTREAM) {</span>
+<span class="fc bfc" id="L79" title="All 2 branches covered.">            DownstreamPatterns[] downstreamPatterns = Arrays.stream(dependency.getSourceRoles() != null ? dependency.getSourceRoles() : new String[0])</span>
+<span class="fc" id="L80">                    .map(DownstreamRole::get)</span>
+<span class="fc" id="L81">                    .filter(Objects::nonNull)</span>
+<span class="pc bpc" id="L82" title="1 of 4 branches missed.">                    .map(r -&gt; r == ANTICORRUPTION_LAYER ? DownstreamPatterns.ANTICORRUPTION_LAYER : r == DownstreamRole.CONFORMIST ? DownstreamPatterns.CONFORMIST : null)</span>
+<span class="fc" id="L83">                    .filter(Objects::nonNull)</span>
+<span class="fc" id="L84">                    .toArray(DownstreamPatterns[]::new);</span>
+<span class="fc bfc" id="L85" title="All 2 branches covered.">            UpstreamPatterns[] upstreamPatterns = Arrays.stream(dependency.getTargetRoles() != null ? dependency.getTargetRoles() : new String[0])</span>
+<span class="fc" id="L86">                    .map(UpstreamRole::get)</span>
+<span class="fc" id="L87">                    .filter(Objects::nonNull)</span>
+<span class="pc bpc" id="L88" title="1 of 4 branches missed.">                    .map(r -&gt; r == UpstreamRole.OPEN_HOST_SERVICE ? UpstreamPatterns.OPEN_HOST_SERVICE : r == UpstreamRole.PUBLISHED_LANGUAGE ? UpstreamPatterns.PUBLISHED_LANGUAGE : null)</span>
+<span class="fc" id="L89">                    .toArray(UpstreamPatterns[]::new);</span>
+            // the source is the downstream system
+            // the target is the upstream system
+<span class="fc bfc" id="L92" title="All 2 branches covered.">            result = new UpstreamDownstreamRelationship(target, source)</span>
+<span class="fc" id="L93">                    .setCustomerSupplier(type == BoundedContextDependencyType.CUSTOMER_SUPPLIER)</span>
+<span class="fc" id="L94">                    .setDownstreamPatterns(downstreamPatterns)</span>
+<span class="fc" id="L95">                    .setUpstreamPatterns(upstreamPatterns);</span>
+        }
+<span class="fc" id="L97">        return Optional.ofNullable(result);</span>
+    }
+
+    private ContextMapperDiagram convert(Result&lt;? extends ExecutableRule&gt; result) {
+<span class="fc" id="L101">        ContextMapperDiagramBuilder builder = ContextMapperDiagram.builder();</span>
+
+<span class="fc" id="L103">        Set&lt;BoundedContextBaseDescriptor&gt; bCs = new TreeSet&lt;&gt;(Comparator.comparing(BoundedContextBaseDescriptor::getName));</span>
+
+<span class="fc bfc" id="L105" title="All 2 branches covered.">        for (Row row : result.getRows()) {</span>
+<span class="fc bfc" id="L106" title="All 2 branches covered.">            for (Column column : row.getColumns().values()) {</span>
+<span class="fc" id="L107">                Object value = column.getValue();</span>
+<span class="fc bfc" id="L108" title="All 2 branches covered.">                if (value instanceof BoundedContextDependencyDescriptor) {</span>
+<span class="fc" id="L109">                    builder.relationship((BoundedContextDependencyDescriptor) value);</span>
+<span class="fc bfc" id="L110" title="All 2 branches covered.">                } else if (value instanceof BoundedContextBaseDescriptor) {</span>
+<span class="fc" id="L111">                    bCs.add(((BoundedContextBaseDescriptor) value));</span>
+                }
+<span class="fc" id="L113">            }</span>
+<span class="fc" id="L114">        }</span>
+
+<span class="fc" id="L116">        builder.boundedContexts(bCs);</span>
+
+<span class="fc" id="L118">        return builder.build();</span>
+    }
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

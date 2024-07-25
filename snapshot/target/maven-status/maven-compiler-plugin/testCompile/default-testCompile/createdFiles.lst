@@ -1,0 +1,7 @@
+org/jqassistant/plugin/contextmapper/scanner/InsuranceContextMapIT$BcDependency.class
+org/jqassistant/plugin/contextmapper/scanner/InsuranceContextMapIT.class
+org/jqassistant/plugin/contextmapper/scanner/FullPropertyMapIT.class
+org/jqassistant/plugin/contextmapper/scanner/InsuranceContextMapIT$BcDependency$BcDependencyBuilder.class
+org/jqassistant/plugin/contextmapper/scanner/UndefinedBoundedContextMapIT.class
+org/jqassistant/plugin/contextmapper/report/ContextMapperReportPluginIT.class
+org/jqassistant/plugin/contextmapper/report/ContextMapGeneratorIT.class

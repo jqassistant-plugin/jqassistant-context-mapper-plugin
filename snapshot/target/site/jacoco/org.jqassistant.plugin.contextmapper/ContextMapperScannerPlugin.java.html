@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ContextMapperScannerPlugin.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">jqassistant-context-mapper-plugin</a> &gt; <a href="index.source.html" class="el_package">org.jqassistant.plugin.contextmapper</a> &gt; <span class="el_source">ContextMapperScannerPlugin.java</span></div><h1>ContextMapperScannerPlugin.java</h1><pre class="source lang-java linenums">package org.jqassistant.plugin.contextmapper;
+
+import com.buschmais.jqassistant.core.scanner.api.Scanner;
+import com.buschmais.jqassistant.core.scanner.api.ScannerContext;
+import com.buschmais.jqassistant.core.scanner.api.ScannerPlugin.Requires;
+import com.buschmais.jqassistant.core.scanner.api.Scope;
+import com.buschmais.jqassistant.core.store.api.Store;
+import com.buschmais.jqassistant.plugin.common.api.model.FileDescriptor;
+import com.buschmais.jqassistant.plugin.common.api.scanner.AbstractScannerPlugin;
+import com.buschmais.jqassistant.plugin.common.api.scanner.filesystem.FileResource;
+import lombok.extern.slf4j.Slf4j;
+import org.contextmapper.dsl.cml.CMLResource;
+import org.contextmapper.dsl.contextMappingDSL.*;
+import org.contextmapper.dsl.standalone.ContextMapperStandaloneSetup;
+import org.contextmapper.dsl.standalone.StandaloneContextMapperAPI;
+import org.eclipse.xtext.EcoreUtil2;
+import org.jqassistant.plugin.contextmapper.model.*;
+
+import java.io.IOException;
+import java.util.*;
+import java.util.stream.Collectors;
+
+/**
+ * Scanner plug-in to enrich the graph based on a .cml-file.
+ *
+ * @author Stephan Pirnbaum
+ */
+@Requires(FileDescriptor.class)
+<span class="fc" id="L29">@Slf4j</span>
+<span class="fc" id="L30">public class ContextMapperScannerPlugin extends AbstractScannerPlugin&lt;FileResource, ContextMapperDescriptor&gt; {</span>
+
+    @Override
+    public boolean accepts(FileResource fileResource, String path, Scope scope) {
+<span class="fc" id="L34">        return path.toLowerCase().endsWith(&quot;.cml&quot;);</span>
+    }
+
+    @Override
+    public ContextMapperDescriptor scan(FileResource fileResource, String path, Scope scope, Scanner scanner) throws IOException {
+<span class="fc" id="L39">        ScannerContext context = scanner.getContext();</span>
+<span class="fc" id="L40">        final Store store = context.getStore();</span>
+
+<span class="fc" id="L42">        StandaloneContextMapperAPI api = ContextMapperStandaloneSetup.getStandaloneAPI();</span>
+<span class="fc" id="L43">        CMLResource cml = api.loadCML(fileResource.getFile());</span>
+
+<span class="fc" id="L45">        ContextMapperFileDescriptor contextMapperDescriptor = store.addDescriptorType(context.getCurrentDescriptor(), ContextMapperFileDescriptor.class);</span>
+
+<span class="fc" id="L47">        List&lt;DomainDescriptor&gt; domains = EcoreUtil2.eAllOfType(cml.getContextMappingModel(), Domain.class).stream()</span>
+<span class="fc" id="L48">                .map(d -&gt; processDomain(store, d, contextMapperDescriptor))</span>
+<span class="fc" id="L49">                .collect(Collectors.toList());</span>
+
+<span class="fc" id="L51">        List&lt;BoundedContextDescriptor&gt; boundedContexts = EcoreUtil2.eAllOfType(cml.getContextMappingModel(), BoundedContext.class).stream()</span>
+<span class="fc" id="L52">            .map(b -&gt; processBoundedContexts(store, domains, b))</span>
+<span class="fc" id="L53">            .collect(Collectors.toList());</span>
+
+<span class="fc" id="L55">        EcoreUtil2.eAllOfType(cml.getContextMappingModel(), ContextMap.class).stream()</span>
+<span class="fc" id="L56">                .map(c -&gt; processContextMap(store, c, boundedContexts))</span>
+<span class="fc" id="L57">                .forEach(c -&gt; contextMapperDescriptor.getContextMaps().add(c));</span>
+
+<span class="fc" id="L59">        return contextMapperDescriptor;</span>
+    }
+
+    private DomainDescriptor processDomain(Store store, Domain domain, ContextMapperFileDescriptor contextMapperFileDescriptor) {
+<span class="fc" id="L63">        DomainDescriptor domainDescriptor = store.create(DomainDescriptor.class);</span>
+<span class="fc" id="L64">        contextMapperFileDescriptor.getDomains().add(domainDescriptor);</span>
+<span class="fc" id="L65">        domainDescriptor.setName(domain.getName());</span>
+<span class="fc bfc" id="L66" title="All 2 branches covered.">        if (domain.getDomainVisionStatement() != null) {</span>
+<span class="fc" id="L67">            domainDescriptor.setDomainVisionStatement(domain.getDomainVisionStatement());</span>
+        }
+
+<span class="fc" id="L70">        domain.getSubdomains().forEach(s -&gt; {</span>
+<span class="fc" id="L71">            SubdomainDescriptor subdomainDescriptor = store.create(SubdomainDescriptor.class);</span>
+<span class="fc" id="L72">            subdomainDescriptor.setName(s.getName());</span>
+<span class="pc bpc" id="L73" title="1 of 2 branches missed.">            if (s.getType() != null) {</span>
+<span class="fc" id="L74">                subdomainDescriptor.setType(s.getType().getName());</span>
+            }
+<span class="pc bpc" id="L76" title="1 of 2 branches missed.">            if (s.getDomainVisionStatement() != null) {</span>
+<span class="fc" id="L77">                subdomainDescriptor.setDomainVisionStatement(s.getDomainVisionStatement());</span>
+            }
+<span class="fc" id="L79">            domainDescriptor.getSubdomains().add(subdomainDescriptor);</span>
+<span class="fc" id="L80">        });</span>
+
+<span class="fc" id="L82">        return domainDescriptor;</span>
+    }
+
+    private BoundedContextDescriptor processBoundedContexts(Store store, List&lt;DomainDescriptor&gt; domains, BoundedContext boundedContext) {
+<span class="fc" id="L86">        BoundedContextDescriptor boundedContextDescriptor = store.create(BoundedContextDescriptor.class);</span>
+<span class="fc" id="L87">        boundedContextDescriptor.setName(boundedContext.getName());</span>
+<span class="pc bpc" id="L88" title="1 of 2 branches missed.">        if (boundedContext.getType() != null) {</span>
+<span class="fc" id="L89">            boundedContextDescriptor.setType(boundedContext.getType().getName());</span>
+        }
+<span class="fc bfc" id="L91" title="All 2 branches covered.">        if (boundedContext.getDomainVisionStatement() != null) {</span>
+<span class="fc" id="L92">            boundedContextDescriptor.setDomainVisionStatement(boundedContext.getDomainVisionStatement());</span>
+        }
+<span class="fc bfc" id="L94" title="All 2 branches covered.">        if (boundedContext.getImplementationTechnology() != null) {</span>
+<span class="fc" id="L95">            boundedContextDescriptor.setImplementationTechnology(boundedContext.getImplementationTechnology());</span>
+        }
+<span class="pc bpc" id="L97" title="1 of 4 branches missed.">        if (boundedContext.getResponsibilities() != null &amp;&amp; !boundedContext.getResponsibilities().isEmpty()) {</span>
+<span class="fc" id="L98">            boundedContextDescriptor.setResponsibilities(boundedContext.getResponsibilities().toArray(String[]::new));</span>
+        }
+<span class="pc bpc" id="L100" title="1 of 2 branches missed.">        if (boundedContext.getKnowledgeLevel() != null) {</span>
+<span class="fc" id="L101">            boundedContextDescriptor.setKnowledgeLevel(boundedContext.getKnowledgeLevel().getLiteral());</span>
+        }
+<span class="fc" id="L103">        boundedContext.getImplementedDomainParts().forEach(d -&gt; {</span>
+<span class="pc bpc" id="L104" title="1 of 2 branches missed.">            if (d instanceof Subdomain) {</span>
+<span class="fc" id="L105">                getSubdomainByName(domains, d.getName()).ifPresent(descriptor -&gt; boundedContextDescriptor.getSubdomains().add(descriptor));</span>
+<span class="nc bnc" id="L106" title="All 2 branches missed.">            } else if (d instanceof Domain) {</span>
+<span class="nc" id="L107">                getDomainByName(domains, d.getName()).ifPresent(descriptor -&gt; boundedContextDescriptor.getDomains().add(descriptor));</span>
+            }
+<span class="fc" id="L109">        });</span>
+
+<span class="fc" id="L111">        return boundedContextDescriptor;</span>
+    }
+
+    private ContextMapDescriptor processContextMap(Store store, ContextMap contextMap, List&lt;BoundedContextDescriptor&gt; boundedContextDescriptors) {
+<span class="fc" id="L115">        ContextMapDescriptor contextMapDescriptor = store.create(ContextMapDescriptor.class);</span>
+<span class="fc" id="L116">        contextMapDescriptor.setName(contextMap.getName());</span>
+<span class="pc bpc" id="L117" title="1 of 2 branches missed.">        contextMapDescriptor.setType(contextMap.getType() != null ? contextMap.getType().getLiteral() : null);</span>
+<span class="pc bpc" id="L118" title="1 of 2 branches missed.">        contextMapDescriptor.setState(contextMap.getState() != null ? contextMap.getState().getLiteral() : null);</span>
+
+<span class="fc" id="L120">        contextMap.getRelationships().forEach(r -&gt; {</span>
+<span class="fc bfc" id="L121" title="All 2 branches covered.">            if (r instanceof UpstreamDownstreamRelationship) {</span>
+<span class="fc" id="L122">                getBoundedContextByName(boundedContextDescriptors, contextMap.getName(), ((UpstreamDownstreamRelationship) r).getUpstream().getName()).ifPresent(uS -&gt; {</span>
+<span class="fc" id="L123">                    getBoundedContextByName(boundedContextDescriptors, contextMap.getName(), ((UpstreamDownstreamRelationship) r).getDownstream().getName()).ifPresent(dS -&gt; {</span>
+<span class="fc" id="L124">                        String[] sourceRoles = ((UpstreamDownstreamRelationship) r).getDownstreamRoles().stream().map(DownstreamRole::getLiteral).toArray(String[]::new);</span>
+<span class="fc" id="L125">                        String[] targetRoles = ((UpstreamDownstreamRelationship) r).getUpstreamRoles().stream().map(UpstreamRole::getLiteral).toArray(String[]::new);</span>
+
+<span class="fc bfc" id="L127" title="All 2 branches covered.">                        createBoundedContextRelationship(store, dS, sourceRoles, uS, targetRoles, (r instanceof CustomerSupplierRelationship) ? BoundedContextDependencyType.CUSTOMER_SUPPLIER.getType() : BoundedContextDependencyType.UPSTREAM_DOWNSTREAM.getType());</span>
+<span class="fc" id="L128">                    });</span>
+<span class="fc" id="L129">                });</span>
+<span class="fc bfc" id="L130" title="All 2 branches covered.">            } else if (r instanceof SharedKernel) {</span>
+<span class="fc" id="L131">                getBoundedContextByName(boundedContextDescriptors, contextMap.getName(), ((SharedKernel) r).getParticipant1().getName()).ifPresent(p1 -&gt; {</span>
+<span class="fc" id="L132">                    getBoundedContextByName(boundedContextDescriptors, contextMap.getName(), ((SharedKernel) r).getParticipant2().getName()).ifPresent(p2 -&gt; {</span>
+<span class="fc" id="L133">                        createBoundedContextRelationship(store, p1, p2, BoundedContextDependencyType.SHARED_KERNEL.getType());</span>
+<span class="fc" id="L134">                    });</span>
+<span class="fc" id="L135">                });</span>
+<span class="pc bpc" id="L136" title="1 of 2 branches missed.">            } else if (r instanceof Partnership) {</span>
+<span class="fc" id="L137">                getBoundedContextByName(boundedContextDescriptors, contextMap.getName(), ((Partnership) r).getParticipant1().getName()).ifPresent(p1 -&gt; {</span>
+<span class="fc" id="L138">                    getBoundedContextByName(boundedContextDescriptors, contextMap.getName(), ((Partnership) r).getParticipant2().getName()).ifPresent(p2 -&gt; {</span>
+<span class="fc" id="L139">                        createBoundedContextRelationship(store, p1, p2, BoundedContextDependencyType.PARTNERSHIP.getType());</span>
+<span class="fc" id="L140">                    });</span>
+<span class="fc" id="L141">                });</span>
+            }
+<span class="fc" id="L143">        });</span>
+
+<span class="fc" id="L145">        boundedContextDescriptors.forEach(b -&gt; contextMapDescriptor.getBoundedContexts().add(b));</span>
+
+<span class="fc" id="L147">        return contextMapDescriptor;</span>
+    }
+
+    private Optional&lt;DomainDescriptor&gt; getDomainByName(List&lt;DomainDescriptor&gt; domainDescriptors, String name) {
+<span class="nc" id="L151">        return domainDescriptors.stream()</span>
+<span class="nc" id="L152">                .filter(d -&gt; name.equals(d.getName()))</span>
+<span class="nc" id="L153">                .findFirst();</span>
+    }
+
+    private Optional&lt;SubdomainDescriptor&gt; getSubdomainByName(List&lt;DomainDescriptor&gt; domainDescriptors, String name) {
+<span class="fc" id="L157">        return domainDescriptors.stream()</span>
+<span class="fc" id="L158">                .flatMap(d -&gt; d.getSubdomains().stream())</span>
+<span class="fc" id="L159">                .filter(s -&gt; name.equals(s.getName()))</span>
+<span class="fc" id="L160">                .findFirst();</span>
+    }
+
+    private Optional&lt;BoundedContextDescriptor&gt; getBoundedContextByName(List&lt;BoundedContextDescriptor&gt; boundedContextDescriptors, String contextMapName, String name) {
+<span class="fc bfc" id="L164" title="All 2 branches covered.">        if (name == null) {</span>
+<span class="fc" id="L165">            log.warn(&quot;Detected undefined Bounded Context in Relationship of Context Map {}, skipping Relationship.&quot;, contextMapName);</span>
+<span class="fc" id="L166">            return Optional.empty();</span>
+        }
+<span class="fc" id="L168">        return boundedContextDescriptors.stream()</span>
+<span class="fc" id="L169">                .filter(bC -&gt; name.equals(bC.getName()))</span>
+<span class="fc" id="L170">                .findFirst();</span>
+    }
+
+    private void createBoundedContextRelationship(Store store, BoundedContextDescriptor source, BoundedContextDescriptor target, String type) {
+<span class="fc" id="L174">        createBoundedContextRelationship(store, source, new String[0], target, new String[0], type);</span>
+<span class="fc" id="L175">    }</span>
+
+    private void createBoundedContextRelationship(Store store, BoundedContextDescriptor source, String[] sourceRules, BoundedContextDescriptor target, String[] targetRoles, String type) {
+<span class="fc" id="L178">        BoundedContextDefinesDependency boundedContextDefinesDependency = store.create(source, BoundedContextDefinesDependency.class, target);</span>
+<span class="fc" id="L179">        boundedContextDefinesDependency.setType(type);</span>
+<span class="fc" id="L180">        boundedContextDefinesDependency.setSourceRoles(sourceRules);</span>
+<span class="fc" id="L181">        boundedContextDefinesDependency.setTargetRoles(targetRoles);</span>
+<span class="fc" id="L182">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

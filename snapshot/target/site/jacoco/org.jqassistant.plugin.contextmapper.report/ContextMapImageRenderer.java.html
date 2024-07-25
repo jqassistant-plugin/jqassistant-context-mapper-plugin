@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ContextMapImageRenderer.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">jqassistant-context-mapper-plugin</a> &gt; <a href="index.source.html" class="el_package">org.jqassistant.plugin.contextmapper.report</a> &gt; <span class="el_source">ContextMapImageRenderer.java</span></div><h1>ContextMapImageRenderer.java</h1><pre class="source lang-java linenums">package org.jqassistant.plugin.contextmapper.report;
+
+import com.buschmais.jqassistant.core.rule.api.model.ExecutableRule;
+import guru.nidi.graphviz.engine.Format;
+import org.contextmapper.contextmap.generator.ContextMapGenerator;
+import org.contextmapper.contextmap.generator.model.ContextMap;
+
+import java.io.File;
+import java.io.IOException;
+
+/**
+ * Renderer to create an image from a {@link ContextMap}.
+ *
+ * @author Stephan Pirnbaum
+ */
+<span class="fc" id="L16">public class ContextMapImageRenderer {</span>
+
+    /**
+     * Renders the diagram for the given {@link ContextMap}.
+     *
+     * @param map The map to render.
+     * @param rule The rule, the map resulted from.
+     * @param directory The directory used for storing the image.
+     * @param fileFormat The format of the image, supported are PNG and SVG.
+     *
+     * @return The {@link File} representing the rendered image.
+     *
+     * @throws IOException In case the image could not be generated.
+     */
+    public File renderDiagram(ContextMap map, ExecutableRule rule, File directory, Format fileFormat) throws IOException {
+<span class="fc" id="L31">        String fileName = rule.getId().replace(&quot;:&quot;, &quot;_&quot;) + &quot;.&quot; + fileFormat.fileExtension;</span>
+<span class="fc" id="L32">        File file = new File(directory, fileName);</span>
+<span class="fc" id="L33">        new ContextMapGenerator()</span>
+<span class="fc" id="L34">                .setBaseDir(directory)</span>
+<span class="fc" id="L35">                .generateContextMapGraphic(map, fileFormat, file.toPath().toString());</span>
+<span class="fc" id="L36">        return file;</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

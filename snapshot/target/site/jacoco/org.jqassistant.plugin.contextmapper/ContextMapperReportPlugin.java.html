@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ContextMapperReportPlugin.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">jqassistant-context-mapper-plugin</a> &gt; <a href="index.source.html" class="el_package">org.jqassistant.plugin.contextmapper</a> &gt; <span class="el_source">ContextMapperReportPlugin.java</span></div><h1>ContextMapperReportPlugin.java</h1><pre class="source lang-java linenums">package org.jqassistant.plugin.contextmapper;
+
+import com.buschmais.jqassistant.core.report.api.ReportContext;
+import com.buschmais.jqassistant.core.report.api.ReportException;
+import com.buschmais.jqassistant.core.report.api.ReportPlugin;
+import com.buschmais.jqassistant.core.report.api.model.Result;
+import com.buschmais.jqassistant.core.rule.api.model.ExecutableRule;
+import guru.nidi.graphviz.engine.Format;
+import org.contextmapper.contextmap.generator.model.ContextMap;
+import org.jqassistant.plugin.contextmapper.report.ContextMapGenerator;
+import org.jqassistant.plugin.contextmapper.report.ContextMapImageRenderer;
+
+import java.io.File;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.Map;
+
+import static guru.nidi.graphviz.engine.Format.PNG;
+import static guru.nidi.graphviz.engine.Format.SVG;
+
+/**
+ * Report plug-in to generate Context Maps from the graph.
+ *
+ * @author Stephan Pirnbaum
+ */
+<span class="fc" id="L27">public class ContextMapperReportPlugin implements ReportPlugin {</span>
+
+    private static final String PROPERTY_FILE_FORMAT = &quot;context-mapper.report.format&quot;;
+
+<span class="fc" id="L31">    private static final Format DEFAULT_FILE_FORMAT = SVG;</span>
+
+    private ReportContext reportContext;
+
+    private File directory;
+
+    private Format fileFormat;
+
+
+    @Override
+    public void configure(ReportContext reportContext, Map&lt;String, Object&gt; properties) throws ReportException {
+<span class="fc" id="L42">        this.reportContext = reportContext;</span>
+<span class="fc" id="L43">        directory = reportContext.getReportDirectory(&quot;context-mapper&quot;);</span>
+<span class="fc" id="L44">        String format = (String) properties.getOrDefault(PROPERTY_FILE_FORMAT, DEFAULT_FILE_FORMAT.fileExtension);</span>
+<span class="pc bpc" id="L45" title="2 of 3 branches missed.">        switch (format) {</span>
+<span class="fc" id="L46">            case &quot;svg&quot;: fileFormat = SVG;</span>
+<span class="fc" id="L47">                break;</span>
+<span class="nc" id="L48">            case &quot;png&quot;: fileFormat = PNG;</span>
+<span class="nc" id="L49">                break;</span>
+            default:
+<span class="nc" id="L51">                throw new ReportException(&quot;Unsupported report type: &quot; + format);</span>
+        }
+<span class="fc" id="L53">    }</span>
+
+    @Override
+    public void setResult(Result&lt;? extends ExecutableRule&gt; result) throws ReportException {
+<span class="fc" id="L57">        ContextMap diagram = new ContextMapGenerator().generateContextMap(result);</span>
+        try {
+<span class="fc" id="L59">            File file = new ContextMapImageRenderer().renderDiagram(diagram, result.getRule(), directory, fileFormat);</span>
+<span class="fc" id="L60">            URL url = file.toURI().toURL();</span>
+<span class="fc" id="L61">            reportContext.addReport(&quot;Context Map&quot;, result.getRule(), ReportContext.ReportType.IMAGE, url);</span>
+<span class="nc" id="L62">        } catch (MalformedURLException e) {</span>
+<span class="nc" id="L63">            throw new ReportException(&quot;Cannot convert file to URL&quot;);</span>
+<span class="nc" id="L64">        } catch (IOException e) {</span>
+<span class="nc" id="L65">            throw new ReportException(&quot;Cannot render context map as diagram&quot;, e);</span>
+<span class="fc" id="L66">        }</span>
+<span class="fc" id="L67">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>
