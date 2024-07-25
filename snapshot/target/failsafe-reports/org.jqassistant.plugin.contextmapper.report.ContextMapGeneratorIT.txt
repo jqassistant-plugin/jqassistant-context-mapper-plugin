@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: org.jqassistant.plugin.contextmapper.report.ContextMapGeneratorIT
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.353 s -- in org.jqassistant.plugin.contextmapper.report.ContextMapGeneratorIT
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.381 s -- in org.jqassistant.plugin.contextmapper.report.ContextMapGeneratorIT
