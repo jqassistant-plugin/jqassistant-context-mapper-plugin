@@ -1,0 +1,85 @@
+¹
+?org.jqassistant.plugin.contextmapper.report.ContextMapGeneratorS
+<init>Iorg.jqassistant.plugin.contextmapper.report.ContextMapGenerator#<init>()VÏ
+convertÃorg.jqassistant.plugin.contextmapper.report.ContextMapGenerator#convert(Lcom/buschmais/jqassistant/core/report/api/model/Result;)Lorg/jqassistant/plugin/contextmapper/report/ContextMapperDiagram;Ý
+createRelationshipÆorg.jqassistant.plugin.contextmapper.report.ContextMapGenerator#createRelationship(Lorg/jqassistant/plugin/contextmapper/model/BoundedContextDependencyDescriptor;Ljava/util/Map;)Ljava/util/Optional;Ü
+generateContextMapÅorg.jqassistant.plugin.contextmapper.report.ContextMapGenerator#generateContextMap(Lcom/buschmais/jqassistant/core/report/api/model/Result;)Lorg/contextmapper/contextmap/generator/model/ContextMap;java.lang.Object¥
+Borg.jqassistant.plugin.contextmapper.model.BoundedContextDependsOnMorg.jqassistant.plugin.contextmapper.model.BoundedContextDependencyDescriptorjava.lang.Object‘
+Borg.jqassistant.plugin.contextmapper.model.ContextMapperDescriptor9com.buschmais.jqassistant.core.store.api.model.Descriptorjava.lang.Objectä
+Corg.jqassistant.plugin.contextmapper.model.BoundedContextDescriptorBorg.jqassistant.plugin.contextmapper.model.ContextMapperDescriptorGorg.jqassistant.plugin.contextmapper.model.BoundedContextBaseDescriptorjava.lang.Object–
+>org.jqassistant.plugin.contextmapper.model.SubdomainDescriptorBorg.jqassistant.plugin.contextmapper.model.ContextMapperDescriptorjava.lang.Objectª
+@org.jqassistant.plugin.contextmapper.report.ContextMapperDiagramT
+<init>Jorg.jqassistant.plugin.contextmapper.report.ContextMapperDiagram#<init>()Vjava.lang.Object–
+>org.jqassistant.plugin.contextmapper.ContextMapperReportPluginR
+<init>Horg.jqassistant.plugin.contextmapper.ContextMapperReportPlugin#<init>()V¡
+	configure“org.jqassistant.plugin.contextmapper.ContextMapperReportPlugin#configure(Lcom/buschmais/jqassistant/core/report/api/ReportContext;Ljava/util/Map;)V‘
+	setResultƒorg.jqassistant.plugin.contextmapper.ContextMapperReportPlugin#setResult(Lcom/buschmais/jqassistant/core/report/api/model/Result;)V6com.buschmais.jqassistant.core.report.api.ReportPluginjava.lang.Objectœ
+Morg.jqassistant.plugin.contextmapper.model.BoundedContextDependencyDescriptor9com.buschmais.jqassistant.core.store.api.model.Descriptorjava.lang.Objectà
+Forg.jqassistant.plugin.contextmapper.model.ContextMapperFileDescriptorBorg.jqassistant.plugin.contextmapper.model.ContextMapperDescriptor@com.buschmais.jqassistant.plugin.common.api.model.FileDescriptorjava.lang.Object™
+?org.jqassistant.plugin.contextmapper.ContextMapperScannerPluginS
+<init>Iorg.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin#<init>()Vç
+acceptsÛorg.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin#accepts(Lcom/buschmais/jqassistant/plugin/common/api/scanner/filesystem/FileResource;Ljava/lang/String;Lcom/buschmais/jqassistant/core/scanner/api/Scope;)ZÔ
+ createBoundedContextRelationship¯org.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin#createBoundedContextRelationship(Lcom/buschmais/jqassistant/core/store/api/Store;Lorg/jqassistant/plugin/contextmapper/model/BoundedContextDescriptor;Lorg/jqassistant/plugin/contextmapper/model/BoundedContextDescriptor;Ljava/lang/String;)Vú
+ createBoundedContextRelationshipÕorg.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin#createBoundedContextRelationship(Lcom/buschmais/jqassistant/core/store/api/Store;Lorg/jqassistant/plugin/contextmapper/model/BoundedContextDescriptor;[Ljava/lang/String;Lorg/jqassistant/plugin/contextmapper/model/BoundedContextDescriptor;[Ljava/lang/String;Ljava/lang/String;)V½
+getBoundedContextByName¡org.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin#getBoundedContextByName(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)Ljava/util/Optional;›
+getDomainByName‡org.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin#getDomainByName(Ljava/util/List;Ljava/lang/String;)Ljava/util/Optional;¡
+getSubdomainByNameŠorg.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin#getSubdomainByName(Ljava/util/List;Ljava/lang/String;)Ljava/util/Optional;°
+processBoundedContexts•org.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin#processBoundedContexts(Lcom/buschmais/jqassistant/core/store/api/Store;Ljava/util/List;Lorg/contextmapper/dsl/contextMappingDSL/BoundedContext;)Lorg/jqassistant/plugin/contextmapper/model/BoundedContextDescriptor;ž
+processContextMapˆorg.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin#processContextMap(Lcom/buschmais/jqassistant/core/store/api/Store;Lorg/contextmapper/dsl/contextMappingDSL/ContextMap;Ljava/util/List;)Lorg/jqassistant/plugin/contextmapper/model/ContextMapDescriptor;Æ
+processDomain´org.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin#processDomain(Lcom/buschmais/jqassistant/core/store/api/Store;Lorg/contextmapper/dsl/contextMappingDSL/Domain;Lorg/jqassistant/plugin/contextmapper/model/ContextMapperFileDescriptor;)Lorg/jqassistant/plugin/contextmapper/model/DomainDescriptor;Ø
+scanÏorg.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin#scan(Lcom/buschmais/jqassistant/plugin/common/api/scanner/filesystem/FileResource;Ljava/lang/String;Lcom/buschmais/jqassistant/core/scanner/api/Scope;Lcom/buschmais/jqassistant/core/scanner/api/Scanner;)Lorg/jqassistant/plugin/contextmapper/model/ContextMapperDescriptor;Icom.buschmais.jqassistant.plugin.common.api.scanner.AbstractScannerPlugin—
+?org.jqassistant.plugin.contextmapper.model.ContextMapDescriptorBorg.jqassistant.plugin.contextmapper.model.ContextMapperDescriptorjava.lang.Objectþ
+Gorg.jqassistant.plugin.contextmapper.model.BoundedContextDependencyType€
+<init>vorg.jqassistant.plugin.contextmapper.model.BoundedContextDependencyType#<init>(Ljava/lang/String;ILjava/lang/String;)V¼
+	getByType®org.jqassistant.plugin.contextmapper.model.BoundedContextDependencyType#getByType(Ljava/lang/String;)Lorg/jqassistant/plugin/contextmapper/model/BoundedContextDependencyType;¸
+valueOf¬org.jqassistant.plugin.contextmapper.model.BoundedContextDependencyType#valueOf(Ljava/lang/String;)Lorg/jqassistant/plugin/contextmapper/model/BoundedContextDependencyType;¥
+valuesšorg.jqassistant.plugin.contextmapper.model.BoundedContextDependencyType#values()[Lorg/jqassistant/plugin/contextmapper/model/BoundedContextDependencyType;java.lang.Enum­
+Jorg.jqassistant.plugin.contextmapper.model.BoundedContextDefinesDependencyMorg.jqassistant.plugin.contextmapper.model.BoundedContextDependencyDescriptorjava.lang.Object“
+;org.jqassistant.plugin.contextmapper.model.DomainDescriptorBorg.jqassistant.plugin.contextmapper.model.ContextMapperDescriptorjava.lang.ObjectÍ
+Corg.jqassistant.plugin.contextmapper.report.ContextMapImageRendererW
+<init>Morg.jqassistant.plugin.contextmapper.report.ContextMapImageRenderer#<init>()Vš
+renderDiagramˆorg.jqassistant.plugin.contextmapper.report.ContextMapImageRenderer#renderDiagram(Lorg/contextmapper/contextmap/generator/model/ContextMap;Lcom/buschmais/jqassistant/core/rule/api/model/ExecutableRule;Ljava/io/File;Lguru/nidi/graphviz/engine/Format;)Ljava/io/File;java.lang.Objectv
+Aorg.jqassistant.plugin.contextmapper.report.ContextMapperLanguagejava.lang.annotation.Annotationjava.lang.Object–
+Gorg.jqassistant.plugin.contextmapper.model.BoundedContextBaseDescriptor9com.buschmais.jqassistant.core.store.api.model.Descriptorjava.lang.Object«
+java.util.StringTokenizerH
+nextElement9java.util.StringTokenizer#nextElement()Ljava/lang/Object;D
+	nextToken7java.util.StringTokenizer#nextToken()Ljava/lang/String;Y
+java.io.BufferedReader?
+readLine3java.io.BufferedReader#readLine()Ljava/lang/String;<
+java.util.Scanner'
+nextIntjava.util.Scanner#nextInt()I«
+java.util.StringTokenizerH
+nextElement9java.util.StringTokenizer#nextElement()Ljava/lang/Object;D
+	nextToken7java.util.StringTokenizer#nextToken()Ljava/lang/String;Y
+java.io.BufferedReader?
+readLine3java.io.BufferedReader#readLine()Ljava/lang/String;<
+java.util.Scanner'
+nextIntjava.util.Scanner#nextInt()I«
+java.util.StringTokenizerH
+nextElement9java.util.StringTokenizer#nextElement()Ljava/lang/Object;D
+	nextToken7java.util.StringTokenizer#nextToken()Ljava/lang/String;Y
+java.io.BufferedReader?
+readLine3java.io.BufferedReader#readLine()Ljava/lang/String;<
+java.util.Scanner'
+nextIntjava.util.Scanner#nextInt()I«
+java.util.StringTokenizerH
+nextElement9java.util.StringTokenizer#nextElement()Ljava/lang/Object;D
+	nextToken7java.util.StringTokenizer#nextToken()Ljava/lang/String;Y
+java.io.BufferedReader?
+readLine3java.io.BufferedReader#readLine()Ljava/lang/String;<
+java.util.Scanner'
+nextIntjava.util.Scanner#nextInt()I«
+java.util.StringTokenizerH
+nextElement9java.util.StringTokenizer#nextElement()Ljava/lang/Object;D
+	nextToken7java.util.StringTokenizer#nextToken()Ljava/lang/String;Y
+java.io.BufferedReader?
+readLine3java.io.BufferedReader#readLine()Ljava/lang/String;<
+java.util.Scanner'
+nextIntjava.util.Scanner#nextInt()I«
+java.util.StringTokenizerH
+nextElement9java.util.StringTokenizer#nextElement()Ljava/lang/Object;D
+	nextToken7java.util.StringTokenizer#nextToken()Ljava/lang/String;Y
+java.io.BufferedReader?
+readLine3java.io.BufferedReader#readLine()Ljava/lang/String;<
+java.util.Scanner'
+nextIntjava.util.Scanner#nextInt()I

@@ -1,0 +1,42 @@
+
+Q__sonar_lambda_25$org.jqassistant.plugin.contextmapper.ContextMapperScannerPluginµ
+¨/home/runner/work/jqassistant-context-mapper-plugin/jqassistant-context-mapper-plugin/src/main/java/org/jqassistant/plugin/contextmapper/ContextMapperScannerPlugin.java© ©(7"startingBlock*Ë
+startingBlock
+© ©(7¨
+¥
+
+__unknown_file (
+namejava.lang.String"__id*i
+
+__unknown_file (M*KA
+?org.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin"
+name*
+1*Š
+1
+© ©("€ý
+
+©* ©(6
+%4java.lang.String"corg.jqassistant.plugin.contextmapper.model.BoundedContextBaseDescriptor#getName()Ljava/lang/String;*g
+
+__unknown_file (K
+I
+bCCorg.jqassistant.plugin.contextmapper.model.BoundedContextDescriptor2	getName()ÖÓ
+
+© ©(7
+%5boolean",java.lang.String#equals(Ljava/lang/Object;)Z*6
+
+__unknown_file (
+
+namejava.lang.String*4
+
+__unknown_file (
+
+%4java.lang.String2equals(Ljava/lang/Object;)"
+
+© ©(7
+
+%5boolean:W
+
+© ©(I
+bCCorg.jqassistant.plugin.contextmapper.model.BoundedContextDescriptorB 
+java.util.function.Predicate

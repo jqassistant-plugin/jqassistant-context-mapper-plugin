@@ -1,0 +1,24 @@
+org.jqassistant.plugin.contextmapper.report.ContextMapGenerator#createRelationship(Lorg/jqassistant/plugin/contextmapper/model/BoundedContextDependencyDescriptor;Ljava/util/Map;)Ljava/util/Optional;
+org.contextmapper.contextmap.generator.model.UpstreamDownstreamRelationship#<init>(Lorg/contextmapper/contextmap/generator/model/BoundedContext;Lorg/contextmapper/contextmap/generator/model/BoundedContext;)V
+org.jqassistant.plugin.contextmapper.model.BoundedContextDependencyType#getByType(Ljava/lang/String;)Lorg/jqassistant/plugin/contextmapper/model/BoundedContextDependencyType;
+org.contextmapper.contextmap.generator.model.Partnership#instance-init#
+java.util.Arrays#stream([Ljava/lang/Object;)Ljava/util/stream/Stream;
+org.contextmapper.contextmap.generator.model.UpstreamDownstreamRelationship#instance-init#
+java.util.Optional#ofNullable(Ljava/lang/Object;)Ljava/util/Optional;
+org.contextmapper.contextmap.generator.model.Partnership#<init>(Lorg/contextmapper/contextmap/generator/model/BoundedContext;Lorg/contextmapper/contextmap/generator/model/BoundedContext;)V
+org.contextmapper.contextmap.generator.model.SharedKernel#<init>(Lorg/contextmapper/contextmap/generator/model/BoundedContext;Lorg/contextmapper/contextmap/generator/model/BoundedContext;)V
+org.contextmapper.contextmap.generator.model.SharedKernel#instance-init#
+==
+setUpstreamPatterns org.contextmapper.contextmap.generator.model.UpstreamDownstreamRelationship#setUpstreamPatterns([Lorg/contextmapper/contextmap/generator/model/UpstreamPatterns;)Lorg/contextmapper/contextmap/generator/model/UpstreamDownstreamRelationship;
+getType org.jqassistant.plugin.contextmapper.model.BoundedContextDependencyDescriptor#getType()Ljava/lang/String;
+map java.util.stream.Stream#map(Ljava/util/function/Function;)Ljava/util/stream/Stream;
+getTarget org.jqassistant.plugin.contextmapper.model.BoundedContextDependencyDescriptor#getTarget()Lorg/jqassistant/plugin/contextmapper/model/BoundedContextBaseDescriptor;
+getSourceRoles org.jqassistant.plugin.contextmapper.model.BoundedContextDependencyDescriptor#getSourceRoles()[Ljava/lang/String;
+getName org.jqassistant.plugin.contextmapper.model.BoundedContextBaseDescriptor#getName()Ljava/lang/String;
+toArray java.util.stream.Stream#toArray(Ljava/util/function/IntFunction;)[Ljava/lang/Object;
+setCustomerSupplier org.contextmapper.contextmap.generator.model.UpstreamDownstreamRelationship#setCustomerSupplier(Z)Lorg/contextmapper/contextmap/generator/model/UpstreamDownstreamRelationship;
+get java.util.Map#get(Ljava/lang/Object;)Ljava/lang/Object;
+filter java.util.stream.Stream#filter(Ljava/util/function/Predicate;)Ljava/util/stream/Stream;
+getTargetRoles org.jqassistant.plugin.contextmapper.model.BoundedContextDependencyDescriptor#getTargetRoles()[Ljava/lang/String;
+getSource org.jqassistant.plugin.contextmapper.model.BoundedContextDependencyDescriptor#getSource()Lorg/jqassistant/plugin/contextmapper/model/BoundedContextBaseDescriptor;
+setDownstreamPatterns org.contextmapper.contextmap.generator.model.UpstreamDownstreamRelationship#setDownstreamPatterns([Lorg/contextmapper/contextmap/generator/model/DownstreamPatterns;)Lorg/contextmapper/contextmap/generator/model/UpstreamDownstreamRelationship;

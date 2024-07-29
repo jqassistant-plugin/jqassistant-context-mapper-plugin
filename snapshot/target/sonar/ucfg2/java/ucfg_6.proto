@@ -1,0 +1,103 @@
+
+P__sonar_lambda_5$org.jqassistant.plugin.contextmapper.report.ContextMapGenerator¥
+®/home/runner/work/jqassistant-context-mapper-plugin/jqassistant-context-mapper-plugin/src/main/java/org/jqassistant/plugin/contextmapper/report/ContextMapGenerator.javaX X(∫"5*¶
+2
+Xê X(†~
+|
+
+Xê X(≥D
+%59=org.contextmapper.contextmap.generator.model.UpstreamPatterns"__id*"
+
+__unknown_file (
+""ø
+º
+
+Xê X(≥D
+%54=org.contextmapper.contextmap.generator.model.UpstreamPatterns"__id*b
+
+__unknown_file (F
+D
+%59=org.contextmapper.contextmap.generator.model.UpstreamPatterns"S
+	X X(∫F
+D
+%54=org.contextmapper.contextmap.generator.model.UpstreamPatterns*è
+3Xi X(jt
+r
+	Xn X(ç;
+%574org.contextmapper.dsl.contextMappingDSL.UpstreamRole"__id*"
+
+__unknown_file (
+""Å
+˛
+	Xi X(ç
+%58boolean"	__compare*"
+
+__unknown_file (
+==*W
+
+__unknown_file (;
+9
+r4org.contextmapper.dsl.contextMappingDSL.UpstreamRole*Y
+
+__unknown_file (=
+;
+%574org.contextmapper.dsl.contextMappingDSL.UpstreamRole*
+2
+1*†
+4XD X(T|
+z
+XD X(fD
+%55=org.contextmapper.contextmap.generator.model.UpstreamPatterns"__id*"
+
+__unknown_file (
+""Ω
+∫
+XD X(fD
+%54=org.contextmapper.contextmap.generator.model.UpstreamPatterns"__id*b
+
+__unknown_file (F
+D
+%55=org.contextmapper.contextmap.generator.model.UpstreamPatterns"S
+	X X(∫F
+D
+%54=org.contextmapper.contextmap.generator.model.UpstreamPatterns*ç
+5X X(s
+q
+X# X(A;
+%524org.contextmapper.dsl.contextMappingDSL.UpstreamRole"__id*"
+
+__unknown_file (
+""Ä
+˝
+X X(A
+%53boolean"	__compare*"
+
+__unknown_file (
+==*W
+
+__unknown_file (;
+9
+r4org.contextmapper.dsl.contextMappingDSL.UpstreamRole*Y
+
+__unknown_file (=
+;
+%524org.contextmapper.dsl.contextMappingDSL.UpstreamRole*
+3
+4*Û
+1
+X∂ X(∫å
+â
+
+X∂ X(∫D
+%54=org.contextmapper.contextmap.generator.model.UpstreamPatterns"__id*/
+
+__unknown_file (
+
+%60
+<nulltype>"S
+	X X(∫F
+D
+%54=org.contextmapper.contextmap.generator.model.UpstreamPatterns:E
+X X(9
+r4org.contextmapper.dsl.contextMappingDSL.UpstreamRoleB
+java.util.function.Function

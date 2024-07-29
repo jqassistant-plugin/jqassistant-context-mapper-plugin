@@ -1,0 +1,12 @@
+org.jqassistant.plugin.contextmapper.report.ContextMapImageRenderer#renderDiagram(Lorg/contextmapper/contextmap/generator/model/ContextMap;Lcom/buschmais/jqassistant/core/rule/api/model/ExecutableRule;Ljava/io/File;Lguru/nidi/graphviz/engine/Format;)Ljava/io/File;
+org.contextmapper.contextmap.generator.ContextMapGenerator#instance-init#
+java.lang.String#replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+org.contextmapper.contextmap.generator.ContextMapGenerator#<init>()V
+java.io.File#<init>(Ljava/io/File;Ljava/lang/String;)V
+java.io.File#instance-init#
+==
+toString java.nio.file.Path#toString()Ljava/lang/String;
+toPath java.io.File#toPath()Ljava/nio/file/Path;
+getId com.buschmais.jqassistant.core.rule.api.model.Rule#getId()Ljava/lang/String;
+generateContextMapGraphic org.contextmapper.contextmap.generator.ContextMapGenerator#generateContextMapGraphic(Lorg/contextmapper/contextmap/generator/model/ContextMap;Lguru/nidi/graphviz/engine/Format;Ljava/lang/String;)V
+setBaseDir org.contextmapper.contextmap.generator.ContextMapGenerator#setBaseDir(Ljava/io/File;)Lorg/contextmapper/contextmap/generator/ContextMapGenerator;

@@ -1,0 +1,89 @@
+
+°org.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin#getBoundedContextByName(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)Ljava/util/Optional;µ
+®/home/runner/work/jqassistant-context-mapper-plugin/jqassistant-context-mapper-plugin/src/main/java/org/jqassistant/plugin/contextmapper/ContextMapperScannerPlugin.java£/ £(F"3*…
+2
+• •(ç
+ä
+
+¶ ¶(#
+%1java.util.Optional".java.util.Optional#empty()Ljava/util/Optional;*2
+
+__unknown_file ("
+java.util.Optional"(
+
+¶ ¶($
+
+%1java.util.Optional*√
+3
+§ §(©
+¶
+
+§ §(
+%0boolean"	__compare*"
+
+__unknown_file (
+==*6
+
+__unknown_file (
+
+namejava.lang.String*"
+
+__unknown_file (
+""*
+2
+1*ü
+1
+® ®((ª∏
+
+® ®(1
+%2java.util.stream.Stream"6java.util.Collection#stream()Ljava/util/stream/Stream;*I
+
+__unknown_file (-
++
+boundedContextDescriptorsjava.util.List2stream()π
+∂
+
+© ©(7"
+%3java.util.function.Predicate"__declareFunction*q
+
+__unknown_file (US
+Q__sonar_lambda_25$org.jqassistant.plugin.contextmapper.ContextMapperScannerPluginâ
+Ü
+
+__unknown_file (,
+"
+%3java.util.function.Predicate"
+name"__id*6
+
+__unknown_file (
+
+namejava.lang.StringÆ´
+
+® ©(8
+%6java.util.stream.Stream"Wjava.util.stream.Stream#filter(Ljava/util/function/Predicate;)Ljava/util/stream/Stream;*;
+
+__unknown_file (
+
+%2java.util.stream.Stream*@
+
+__unknown_file ($
+"
+%3java.util.function.Predicate2&filter(Ljava/util/function/Predicate;)¨©
+
+® ™(
+%7java.util.Optional"7java.util.stream.Stream#findFirst()Ljava/util/Optional;*;
+
+__unknown_file (
+
+%6java.util.stream.Stream2findFirst()"(
+
+® ™(
+
+%7java.util.Optional::
+£G £(Ä+
+boundedContextDescriptorsjava.util.List:2
+£Å £(ó"
+contextMapNamejava.lang.String:(
+£ò £(£
+namejava.lang.StringBCA
+?org.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin

@@ -1,0 +1,16 @@
+
+r__sonar_lambda_26$org.jqassistant.plugin.contextmapper.report.ContextMapperLanguage$ContextMapperLanguageElement$1µ
+™/home/runner/work/jqassistant-context-mapper-plugin/jqassistant-context-mapper-plugin/src/main/java/org/jqassistant/plugin/contextmapper/report/ContextMapperLanguage.java   (U"1*œ
+1 3  (Kôñ
+ 3  (U
+%1java.lang.String"corg.jqassistant.plugin.contextmapper.model.BoundedContextBaseDescriptor#getName()Ljava/lang/String;*Å
+
+__unknown_file (e
+c
+boundedContextDescriptorGorg.jqassistant.plugin.contextmapper.model.BoundedContextBaseDescriptor2	getName()"$
+ 3  (U
+
+%1java.lang.String:o
+   (/c
+boundedContextDescriptorGorg.jqassistant.plugin.contextmapper.model.BoundedContextBaseDescriptorB<:
+8com.buschmais.jqassistant.core.report.api.SourceProvider

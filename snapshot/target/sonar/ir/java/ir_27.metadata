@@ -1,0 +1,21 @@
+org.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin#processBoundedContexts(Lcom/buschmais/jqassistant/core/store/api/Store;Ljava/util/List;Lorg/contextmapper/dsl/contextMappingDSL/BoundedContext;)Lorg/jqassistant/plugin/contextmapper/model/BoundedContextDescriptor;
+org.contextmapper.dsl.contextMappingDSL.KnowledgeLevel#getLiteral()Ljava/lang/String;
+org.contextmapper.dsl.contextMappingDSL.BoundedContextType#getName()Ljava/lang/String;
+==
+setDomainVisionStatement org.jqassistant.plugin.contextmapper.model.BoundedContextBaseDescriptor#setDomainVisionStatement(Ljava/lang/String;)V
+getImplementedDomainParts org.contextmapper.dsl.contextMappingDSL.BoundedContext#getImplementedDomainParts()Lorg/eclipse/emf/common/util/EList;
+setType org.jqassistant.plugin.contextmapper.model.BoundedContextBaseDescriptor#setType(Ljava/lang/String;)V
+getImplementationTechnology org.contextmapper.dsl.contextMappingDSL.BoundedContext#getImplementationTechnology()Ljava/lang/String;
+getDomainVisionStatement org.contextmapper.dsl.contextMappingDSL.BoundedContext#getDomainVisionStatement()Ljava/lang/String;
+isEmpty java.util.List#isEmpty()Z
+getResponsibilities org.contextmapper.dsl.contextMappingDSL.BoundedContext#getResponsibilities()Lorg/eclipse/emf/common/util/EList;
+setKnowledgeLevel org.jqassistant.plugin.contextmapper.model.BoundedContextBaseDescriptor#setKnowledgeLevel(Ljava/lang/String;)V
+setResponsibilities org.jqassistant.plugin.contextmapper.model.BoundedContextBaseDescriptor#setResponsibilities([Ljava/lang/String;)V
+forEach java.lang.Iterable#forEach(Ljava/util/function/Consumer;)V
+setName org.jqassistant.plugin.contextmapper.model.BoundedContextBaseDescriptor#setName(Ljava/lang/String;)V
+setImplementationTechnology org.jqassistant.plugin.contextmapper.model.BoundedContextBaseDescriptor#setImplementationTechnology(Ljava/lang/String;)V
+getKnowledgeLevel org.contextmapper.dsl.contextMappingDSL.BoundedContext#getKnowledgeLevel()Lorg/contextmapper/dsl/contextMappingDSL/KnowledgeLevel;
+create com.buschmais.jqassistant.core.store.api.Store#create(Ljava/lang/Class;)Lcom/buschmais/jqassistant/core/store/api/model/Descriptor;
+getName org.contextmapper.dsl.contextMappingDSL.BoundedContext#getName()Ljava/lang/String;
+getType org.contextmapper.dsl.contextMappingDSL.BoundedContext#getType()Lorg/contextmapper/dsl/contextMappingDSL/BoundedContextType;
+toArray java.util.Collection#toArray(Ljava/util/function/IntFunction;)[Ljava/lang/Object;

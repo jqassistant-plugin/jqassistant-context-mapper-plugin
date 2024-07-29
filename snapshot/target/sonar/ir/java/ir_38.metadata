@@ -1,0 +1,2 @@
+org.jqassistant.plugin.contextmapper.model.BoundedContextDependencyType#getByType(Ljava/lang/String;)Lorg/jqassistant/plugin/contextmapper/model/BoundedContextDependencyType;
+java.lang.String#isEmpty()Z

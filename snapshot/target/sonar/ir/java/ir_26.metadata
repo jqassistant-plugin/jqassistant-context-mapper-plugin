@@ -1,0 +1,11 @@
+org.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin#processDomain(Lcom/buschmais/jqassistant/core/store/api/Store;Lorg/contextmapper/dsl/contextMappingDSL/Domain;Lorg/jqassistant/plugin/contextmapper/model/ContextMapperFileDescriptor;)Lorg/jqassistant/plugin/contextmapper/model/DomainDescriptor;
+==
+setName org.jqassistant.plugin.contextmapper.model.DomainDescriptor#setName(Ljava/lang/String;)V
+forEach java.lang.Iterable#forEach(Ljava/util/function/Consumer;)V
+add java.util.List#add(Ljava/lang/Object;)Z
+getDomainVisionStatement org.contextmapper.dsl.contextMappingDSL.DomainPart#getDomainVisionStatement()Ljava/lang/String;
+getSubdomains org.contextmapper.dsl.contextMappingDSL.Domain#getSubdomains()Lorg/eclipse/emf/common/util/EList;
+setDomainVisionStatement org.jqassistant.plugin.contextmapper.model.DomainDescriptor#setDomainVisionStatement(Ljava/lang/String;)V
+getName org.contextmapper.dsl.contextMappingDSL.DomainPart#getName()Ljava/lang/String;
+create com.buschmais.jqassistant.core.store.api.Store#create(Ljava/lang/Class;)Lcom/buschmais/jqassistant/core/store/api/model/Descriptor;
+getDomains org.jqassistant.plugin.contextmapper.model.ContextMapperFileDescriptor#getDomains()Ljava/util/List;

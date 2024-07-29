@@ -1,0 +1,10 @@
+org.jqassistant.plugin.contextmapper.report.ContextMapGenerator#convert(Lcom/buschmais/jqassistant/core/report/api/model/Result;)Lorg/jqassistant/plugin/contextmapper/report/ContextMapperDiagram;
+java.util.Comparator#comparing(Ljava/util/function/Function;)Ljava/util/Comparator;
+java.util.TreeSet#<init>(Ljava/util/Comparator;)V
+java.util.TreeSet#instance-init#
+==
+getRows com.buschmais.jqassistant.core.report.api.model.Result#getRows()Ljava/util/List;
+getColumns com.buschmais.jqassistant.core.report.api.model.Row#getColumns()Ljava/util/Map;
+getValue com.buschmais.jqassistant.core.report.api.model.Column#getValue()Ljava/lang/Object;
+add java.util.Set#add(Ljava/lang/Object;)Z
+values java.util.Map#values()Ljava/util/Collection;

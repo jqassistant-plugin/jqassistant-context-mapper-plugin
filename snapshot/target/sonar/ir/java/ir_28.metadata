@@ -1,0 +1,13 @@
+org.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin#processContextMap(Lcom/buschmais/jqassistant/core/store/api/Store;Lorg/contextmapper/dsl/contextMappingDSL/ContextMap;Ljava/util/List;)Lorg/jqassistant/plugin/contextmapper/model/ContextMapDescriptor;
+org.contextmapper.dsl.contextMappingDSL.ContextMapType#getLiteral()Ljava/lang/String;
+org.contextmapper.dsl.contextMappingDSL.ContextMapState#getLiteral()Ljava/lang/String;
+==
+forEach java.lang.Iterable#forEach(Ljava/util/function/Consumer;)V
+getState org.contextmapper.dsl.contextMappingDSL.ContextMap#getState()Lorg/contextmapper/dsl/contextMappingDSL/ContextMapState;
+setState org.jqassistant.plugin.contextmapper.model.ContextMapDescriptor#setState(Ljava/lang/String;)V
+getName org.contextmapper.dsl.contextMappingDSL.ContextMap#getName()Ljava/lang/String;
+setName org.jqassistant.plugin.contextmapper.model.ContextMapDescriptor#setName(Ljava/lang/String;)V
+setType org.jqassistant.plugin.contextmapper.model.ContextMapDescriptor#setType(Ljava/lang/String;)V
+getType org.contextmapper.dsl.contextMappingDSL.ContextMap#getType()Lorg/contextmapper/dsl/contextMappingDSL/ContextMapType;
+create com.buschmais.jqassistant.core.store.api.Store#create(Ljava/lang/Class;)Lcom/buschmais/jqassistant/core/store/api/model/Descriptor;
+getRelationships org.contextmapper.dsl.contextMappingDSL.ContextMap#getRelationships()Lorg/eclipse/emf/common/util/EList;

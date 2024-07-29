@@ -1,0 +1,103 @@
+
+P__sonar_lambda_4$org.jqassistant.plugin.contextmapper.report.ContextMapGenerator¥
+®/home/runner/work/jqassistant-context-mapper-plugin/jqassistant-context-mapper-plugin/src/main/java/org/jqassistant/plugin/contextmapper/report/ContextMapGenerator.javaR R(©"5*Ø
+2
+RÖ R(óÄ
+~
+
+RÖ R(¢F
+%38?org.contextmapper.contextmap.generator.model.DownstreamPatterns"__id*"
+
+__unknown_file (
+""√
+¿
+
+RÖ R(¢F
+%33?org.contextmapper.contextmap.generator.model.DownstreamPatterns"__id*d
+
+__unknown_file (H
+F
+%38?org.contextmapper.contextmap.generator.model.DownstreamPatterns"U
+	R R(©H
+F
+%33?org.contextmapper.contextmap.generator.model.DownstreamPatterns*ï
+3Rd R(ev
+t
+	Ri R(Ç=
+%366org.contextmapper.dsl.contextMappingDSL.DownstreamRole"__id*"
+
+__unknown_file (
+""Ö
+Ç
+	Rd R(Ç
+%37boolean"	__compare*"
+
+__unknown_file (
+==*Y
+
+__unknown_file (=
+;
+r6org.contextmapper.dsl.contextMappingDSL.DownstreamRole*[
+
+__unknown_file (?
+=
+%366org.contextmapper.dsl.contextMappingDSL.DownstreamRole*
+2
+1*®
+4R: R(L~
+|
+R: R(aF
+%34?org.contextmapper.contextmap.generator.model.DownstreamPatterns"__id*"
+
+__unknown_file (
+""¡
+æ
+R: R(aF
+%33?org.contextmapper.contextmap.generator.model.DownstreamPatterns"__id*d
+
+__unknown_file (H
+F
+%34?org.contextmapper.contextmap.generator.model.DownstreamPatterns"U
+	R R(©H
+F
+%33?org.contextmapper.contextmap.generator.model.DownstreamPatterns*ì
+5R R(u
+s
+R# R(7=
+%316org.contextmapper.dsl.contextMappingDSL.DownstreamRole"__id*"
+
+__unknown_file (
+""Ñ
+Å
+R R(7
+%32boolean"	__compare*"
+
+__unknown_file (
+==*Y
+
+__unknown_file (=
+;
+r6org.contextmapper.dsl.contextMappingDSL.DownstreamRole*[
+
+__unknown_file (?
+=
+%316org.contextmapper.dsl.contextMappingDSL.DownstreamRole*
+3
+4*˜
+1
+R• R(©é
+ã
+
+R• R(©F
+%33?org.contextmapper.contextmap.generator.model.DownstreamPatterns"__id*/
+
+__unknown_file (
+
+%39
+<nulltype>"U
+	R R(©H
+F
+%33?org.contextmapper.contextmap.generator.model.DownstreamPatterns:G
+R R(;
+r6org.contextmapper.dsl.contextMappingDSL.DownstreamRoleB
+java.util.function.Function

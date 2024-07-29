@@ -1,0 +1,55 @@
+
+P__sonar_lambda_8$org.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin³
+¨/home/runner/work/jqassistant-context-mapper-plugin/jqassistant-context-mapper-plugin/src/main/java/org/jqassistant/plugin/contextmapper/ContextMapperScannerPlugin.java8 8(F"startingBlock*¹
+startingBlock8 8(FÈ
+Å
+
+__unknown_file (7
+store.com.buschmais.jqassistant.core.store.api.Store"__id*j
+
+__unknown_file (N*LA
+?org.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin"
+store¼
+¹
+
+__unknown_file (!
+boundedContextsjava.util.List"__id*t
+
+__unknown_file (X*VA
+?org.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin"
+boundedContextsŽ
+‹
+
+__unknown_file (b
+ContextMapperScannerPlugin.this?org.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin"__id*„
+
+__unknown_file (h*fA
+?org.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin"!
+ContextMapperScannerPlugin.this*
+1*¸
+18 8(+Ò
+Ï
+8 8(FF
+%27?org.jqassistant.plugin.contextmapper.model.ContextMapDescriptor"ˆorg.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin#processContextMap(Lcom/buschmais/jqassistant/core/store/api/Store;Lorg/contextmapper/dsl/contextMappingDSL/ContextMap;Ljava/util/List;)Lorg/jqassistant/plugin/contextmapper/model/ContextMapDescriptor;*€
+
+__unknown_file (d
+b
+ContextMapperScannerPlugin.this?org.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin*U
+
+__unknown_file (9
+7
+store.com.buschmais.jqassistant.core.store.api.Store*U
+
+__unknown_file (9
+7
+c2org.contextmapper.dsl.contextMappingDSL.ContextMap*?
+
+__unknown_file (#
+!
+boundedContextsjava.util.List"T
+8 8(FH
+F
+%27?org.jqassistant.plugin.contextmapper.model.ContextMapDescriptor:C
+8 8(7
+c2org.contextmapper.dsl.contextMappingDSL.ContextMapB
+java.util.function.Function

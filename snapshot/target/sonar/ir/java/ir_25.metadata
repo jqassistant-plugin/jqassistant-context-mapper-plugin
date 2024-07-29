@@ -1,0 +1,16 @@
+org.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin#scan(Lcom/buschmais/jqassistant/plugin/common/api/scanner/filesystem/FileResource;Ljava/lang/String;Lcom/buschmais/jqassistant/core/scanner/api/Scope;Lcom/buschmais/jqassistant/core/scanner/api/Scanner;)Lorg/jqassistant/plugin/contextmapper/model/ContextMapperDescriptor;
+java.util.stream.Collectors#toList()Ljava/util/stream/Collector;
+org.contextmapper.dsl.standalone.ContextMapperStandaloneSetup#getStandaloneAPI()Lorg/contextmapper/dsl/standalone/StandaloneContextMapperAPI;
+org.eclipse.xtext.EcoreUtil2#eAllOfType(Lorg/eclipse/emf/ecore/EObject;Ljava/lang/Class;)Ljava/util/List;
+==
+getContext com.buschmais.jqassistant.core.scanner.api.Scanner#getContext()Lcom/buschmais/jqassistant/core/scanner/api/ScannerContext;
+loadCML org.contextmapper.dsl.standalone.StandaloneContextMapperAPI#loadCML(Ljava/io/File;)Lorg/contextmapper/dsl/cml/CMLResource;
+addDescriptorType com.buschmais.jqassistant.core.store.api.Store#addDescriptorType(Lcom/buschmais/jqassistant/core/store/api/model/Descriptor;Ljava/lang/Class;)Lcom/buschmais/jqassistant/core/store/api/model/Descriptor;
+collect java.util.stream.Stream#collect(Ljava/util/stream/Collector;)Ljava/lang/Object;
+getCurrentDescriptor com.buschmais.jqassistant.core.scanner.api.ScannerContext#getCurrentDescriptor()Lcom/buschmais/jqassistant/core/store/api/model/Descriptor;
+getStore com.buschmais.jqassistant.core.scanner.api.ScannerContext#getStore()Lcom/buschmais/jqassistant/core/store/api/Store;
+stream java.util.Collection#stream()Ljava/util/stream/Stream;
+map java.util.stream.Stream#map(Ljava/util/function/Function;)Ljava/util/stream/Stream;
+getFile com.buschmais.jqassistant.plugin.common.api.scanner.filesystem.FileResource#getFile()Ljava/io/File;
+getContextMappingModel org.contextmapper.dsl.cml.CMLResource#getContextMappingModel()Lorg/contextmapper/dsl/contextMappingDSL/ContextMappingModel;
+forEach java.util.stream.Stream#forEach(Ljava/util/function/Consumer;)V

@@ -1,0 +1,3 @@
+org.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin#accepts(Lcom/buschmais/jqassistant/plugin/common/api/scanner/filesystem/FileResource;Ljava/lang/String;Lcom/buschmais/jqassistant/core/scanner/api/Scope;)Z
+java.lang.String#endsWith(Ljava/lang/String;)Z
+java.lang.String#toLowerCase()Ljava/lang/String;

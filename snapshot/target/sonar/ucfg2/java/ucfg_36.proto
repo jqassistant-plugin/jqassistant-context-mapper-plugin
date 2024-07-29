@@ -1,0 +1,76 @@
+
+Šorg.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin#getSubdomainByName(Ljava/util/List;Ljava/lang/String;)Ljava/util/Optional;µ
+¨/home/runner/work/jqassistant-context-mapper-plugin/jqassistant-context-mapper-plugin/src/main/java/org/jqassistant/plugin/contextmapper/ContextMapperScannerPlugin.javaœ* œ(<"1*‚
+1
+ ( ³°
+
+ ()
+%0java.util.stream.Stream"6java.util.Collection#stream()Ljava/util/stream/Stream;*A
+
+__unknown_file (%
+#
+domainDescriptorsjava.util.List2stream()¸
+µ
+
+ž ž(8!
+%1java.util.function.Function"__declareFunction*q
+
+__unknown_file (US
+Q__sonar_lambda_23$org.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin­ª
+
+ ž(9
+%4java.util.stream.Stream"Wjava.util.stream.Stream#flatMap(Ljava/util/function/Function;)Ljava/util/stream/Stream;*;
+
+__unknown_file (
+
+%0java.util.stream.Stream*?
+
+__unknown_file (#
+!
+%1java.util.function.Function2&flatMap(Ljava/util/function/Function;)¹
+¶
+
+Ÿ Ÿ(5"
+%5java.util.function.Predicate"__declareFunction*q
+
+__unknown_file (US
+Q__sonar_lambda_24$org.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin‰
+†
+
+__unknown_file (,
+"
+%5java.util.function.Predicate"
+name"__id*6
+
+__unknown_file (
+
+namejava.lang.String®«
+
+ Ÿ(6
+%8java.util.stream.Stream"Wjava.util.stream.Stream#filter(Ljava/util/function/Predicate;)Ljava/util/stream/Stream;*;
+
+__unknown_file (
+
+%4java.util.stream.Stream*@
+
+__unknown_file ($
+"
+%5java.util.function.Predicate2&filter(Ljava/util/function/Predicate;)¬©
+
+  (
+%9java.util.Optional"7java.util.stream.Stream#findFirst()Ljava/util/Optional;*;
+
+__unknown_file (
+
+%8java.util.stream.Stream2findFirst()"(
+
+  (
+
+%9java.util.Optional:1
+
+œ= œ(f#
+domainDescriptorsjava.util.List:&
+
+œg œ(r
+namejava.lang.StringBCA
+?org.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin

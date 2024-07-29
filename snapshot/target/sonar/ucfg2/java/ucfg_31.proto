@@ -1,0 +1,306 @@
+
+ˆorg.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin#processContextMap(Lcom/buschmais/jqassistant/core/store/api/Store;Lorg/contextmapper/dsl/contextMappingDSL/ContextMap;Ljava/util/List;)Lorg/jqassistant/plugin/contextmapper/model/ContextMapDescriptor;³
+¨/home/runner/work/jqassistant-context-mapper-plugin/jqassistant-context-mapper-plugin/src/main/java/org/jqassistant/plugin/contextmapper/ContextMapperScannerPlugin.javar! r(2"7*p
+2vk v(o\
+Z
+vk v(o
+%12java.lang.String"__id*/
+
+__unknown_file (
+
+%14
+<nulltype>*
+1*—
+3vF v(P±®
+vF v([>
+%157org.contextmapper.dsl.contextMappingDSL.ContextMapState"vorg.contextmapper.dsl.contextMappingDSL.ContextMap#getState()Lorg/contextmapper/dsl/contextMappingDSL/ContextMapState;*^
+
+__unknown_file (B
+@
+
+contextMap2org.contextmapper.dsl.contextMappingDSL.ContextMap2
+getState()êç
+vF v(h
+%13java.lang.String"Vorg.contextmapper.dsl.contextMappingDSL.ContextMapState#getLiteral()Ljava/lang/String;*\
+
+__unknown_file (@
+>
+%157org.contextmapper.dsl.contextMappingDSL.ContextMapState2getLiteral()b
+`
+vF v(h
+%12java.lang.String"__id*5
+
+__unknown_file (
+
+%13java.lang.String*
+1*Þ
+4u u(mÁ¾
+u u(m
+
+%9void"\org.jqassistant.plugin.contextmapper.model.ContextMapDescriptor#setType(Ljava/lang/String;)V*u
+
+__unknown_file (Y
+W
+contextMapDescriptor?org.jqassistant.plugin.contextmapper.model.ContextMapDescriptor*4
+
+__unknown_file (
+
+%5java.lang.String2setType(Ljava/lang/String;)±®
+v& v(;>
+%107org.contextmapper.dsl.contextMappingDSL.ContextMapState"vorg.contextmapper.dsl.contextMappingDSL.ContextMap#getState()Lorg/contextmapper/dsl/contextMappingDSL/ContextMapState;*^
+
+__unknown_file (B
+@
+
+contextMap2org.contextmapper.dsl.contextMappingDSL.ContextMap2
+getState()Î
+Ë
+v& v(C
+%11boolean"	__compare*"
+
+__unknown_file (
+!=*\
+
+__unknown_file (@
+>
+%107org.contextmapper.dsl.contextMappingDSL.ContextMapState*"
+
+__unknown_file (
+""*
+2
+3*n
+5uh u(lZ
+X
+uh u(l
+%5java.lang.String"__id*.
+
+__unknown_file (
+
+%7
+<nulltype>*
+4*Œ
+6uD u(N¬©
+uD u(X<
+%86org.contextmapper.dsl.contextMappingDSL.ContextMapType"torg.contextmapper.dsl.contextMappingDSL.ContextMap#getType()Lorg/contextmapper/dsl/contextMappingDSL/ContextMapType;*^
+
+__unknown_file (B
+@
+
+contextMap2org.contextmapper.dsl.contextMappingDSL.ContextMap2	getType()æã
+uD u(e
+%6java.lang.String"Uorg.contextmapper.dsl.contextMappingDSL.ContextMapType#getLiteral()Ljava/lang/String;*Z
+
+__unknown_file (>
+<
+%86org.contextmapper.dsl.contextMappingDSL.ContextMapType2getLiteral()`
+^
+uD u(e
+%5java.lang.String"__id*4
+
+__unknown_file (
+
+%6java.lang.String*
+4*€
+7s4 s(9ðí
+s4 s(\E
+%0?org.jqassistant.plugin.contextmapper.model.ContextMapDescriptor"ƒcom.buschmais.jqassistant.core.store.api.Store#create(Ljava/lang/Class;)Lcom/buschmais/jqassistant/core/store/api/model/Descriptor;*U
+
+__unknown_file (9
+7
+store.com.buschmais.jqassistant.core.store.api.Store*"
+
+__unknown_file (
+""2create(Ljava/lang/Class;)Ñ
+Î
+s s(]W
+contextMapDescriptor?org.jqassistant.plugin.contextmapper.model.ContextMapDescriptor"__id*c
+
+__unknown_file (G
+E
+%0?org.jqassistant.plugin.contextmapper.model.ContextMapDescriptoràÝ
+t% t(9
+%1java.lang.String"Norg.contextmapper.dsl.contextMappingDSL.ContextMap#getName()Ljava/lang/String;*^
+
+__unknown_file (B
+@
+
+contextMap2org.contextmapper.dsl.contextMappingDSL.ContextMap2	getName()Á¾
+t t(:
+
+%2void"\org.jqassistant.plugin.contextmapper.model.ContextMapDescriptor#setName(Ljava/lang/String;)V*u
+
+__unknown_file (Y
+W
+contextMapDescriptor?org.jqassistant.plugin.contextmapper.model.ContextMapDescriptor*4
+
+__unknown_file (
+
+%1java.lang.String2setName(Ljava/lang/String;)¬©
+u% u(9<
+%36org.contextmapper.dsl.contextMappingDSL.ContextMapType"torg.contextmapper.dsl.contextMappingDSL.ContextMap#getType()Lorg/contextmapper/dsl/contextMappingDSL/ContextMapType;*^
+
+__unknown_file (B
+@
+
+contextMap2org.contextmapper.dsl.contextMappingDSL.ContextMap2	getType()Ë
+È
+u% u(A
+%4boolean"	__compare*"
+
+__unknown_file (
+!=*Z
+
+__unknown_file (>
+<
+%36org.contextmapper.dsl.contextMappingDSL.ContextMapType*"
+
+__unknown_file (
+""*
+5
+6*ß
+1v v(pÅÂ
+v v(p
+%16void"]org.jqassistant.plugin.contextmapper.model.ContextMapDescriptor#setState(Ljava/lang/String;)V*u
+
+__unknown_file (Y
+W
+contextMapDescriptor?org.jqassistant.plugin.contextmapper.model.ContextMapDescriptor*5
+
+__unknown_file (
+
+%12java.lang.String2setState(Ljava/lang/String;)•’
+x x(%(
+%17!org.eclipse.emf.common.util.EList"horg.contextmapper.dsl.contextMappingDSL.ContextMap#getRelationships()Lorg/eclipse/emf/common/util/EList;*^
+
+__unknown_file (B
+@
+
+contextMap2org.contextmapper.dsl.contextMappingDSL.ContextMap2getRelationships()¸
+µ
+	x. (	"
+%18java.util.function.Consumer"__declareFunction*q
+
+__unknown_file (US
+Q__sonar_lambda_14$org.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin±
+®
+
+__unknown_file (A
+"
+%18java.util.function.Consumer"
+boundedContextDescriptors"__id*I
+
+__unknown_file (-
++
+boundedContextDescriptorsjava.util.List·
+´
+
+__unknown_file (2
+"
+%18java.util.function.Consumer"
+
+contextMap"__id*^
+
+__unknown_file (B
+@
+
+contextMap2org.contextmapper.dsl.contextMappingDSL.ContextMap©
+¦
+
+__unknown_file (-
+"
+%18java.util.function.Consumer"
+store"__id*U
+
+__unknown_file (9
+7
+store.com.buschmais.jqassistant.core.store.api.Store¸
+µ
+
+__unknown_file (*
+"
+%18java.util.function.Consumer"
+uS"__id*g
+
+__unknown_file (K
+I
+uSCorg.jqassistant.plugin.contextmapper.model.BoundedContextDescriptor¸
+µ
+
+__unknown_file (*
+"
+%18java.util.function.Consumer"
+p1"__id*g
+
+__unknown_file (K
+I
+p1Corg.jqassistant.plugin.contextmapper.model.BoundedContextDescriptor¸
+µ
+
+__unknown_file (*
+"
+%18java.util.function.Consumer"
+p1"__id*g
+
+__unknown_file (K
+I
+p1Corg.jqassistant.plugin.contextmapper.model.BoundedContextDescriptorÍ
+Ê
+
+__unknown_file (G
+"
+%18java.util.function.Consumer"!
+ContextMapperScannerPlugin.this"__id*_
+
+__unknown_file (CA
+?org.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin‰†
+	x (
+
+%73void":java.lang.Iterable#forEach(Ljava/util/function/Consumer;)V*F
+
+__unknown_file (*
+(
+%17!org.eclipse.emf.common.util.EList*@
+
+__unknown_file ($
+"
+%18java.util.function.Consumer2&forEach(Ljava/util/function/Consumer;)¹
+¶
+
+‘* ‘(_"
+%74java.util.function.Consumer"__declareFunction*q
+
+__unknown_file (US
+Q__sonar_lambda_21$org.jqassistant.plugin.contextmapper.ContextMapperScannerPluginØ
+Õ
+
+__unknown_file (<
+"
+%74java.util.function.Consumer"
+contextMapDescriptor"__id*u
+
+__unknown_file (Y
+W
+contextMapDescriptor?org.jqassistant.plugin.contextmapper.model.ContextMapDescriptorŠ
+
+‘ ‘(`
+%77void":java.lang.Iterable#forEach(Ljava/util/function/Consumer;)V*I
+
+__unknown_file (-
++
+boundedContextDescriptorsjava.util.List*@
+
+__unknown_file ($
+"
+%74java.util.function.Consumer2&forEach(Ljava/util/function/Consumer;)"g
+
+“ “($Y
+W
+contextMapDescriptor?org.jqassistant.plugin.contextmapper.model.ContextMapDescriptor:C
+r3 r(?7
+store.com.buschmais.jqassistant.core.store.api.Store:L
+r@ r(V@
+
+contextMap2org.contextmapper.dsl.contextMappingDSL.ContextMap:8
+	rW r(+
+boundedContextDescriptorsjava.util.ListBCA
+?org.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin

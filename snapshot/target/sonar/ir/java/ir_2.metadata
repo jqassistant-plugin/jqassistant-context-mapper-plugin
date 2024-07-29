@@ -1,0 +1,5 @@
+org.jqassistant.plugin.contextmapper.report.ContextMapGenerator#generateContextMap(Lcom/buschmais/jqassistant/core/report/api/model/Result;)Lorg/contextmapper/contextmap/generator/model/ContextMap;
+java.util.stream.Collectors#toMap(Ljava/util/function/Function;Ljava/util/function/Function;)Ljava/util/stream/Collector;
+org.contextmapper.contextmap.generator.model.ContextMap#<init>()V
+org.contextmapper.contextmap.generator.model.ContextMap#instance-init#
+org.jqassistant.plugin.contextmapper.report.ContextMapGenerator#convert(Lcom/buschmais/jqassistant/core/report/api/model/Result;)Lorg/jqassistant/plugin/contextmapper/report/ContextMapperDiagram;

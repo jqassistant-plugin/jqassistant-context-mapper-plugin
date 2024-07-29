@@ -1,0 +1,55 @@
+
+P__sonar_lambda_6$org.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin≥
+®/home/runner/work/jqassistant-context-mapper-plugin/jqassistant-context-mapper-plugin/src/main/java/org/jqassistant/plugin/contextmapper/ContextMapperScannerPlugin.java0 0(J"startingBlock*Å
+startingBlock0 0(J»
+≈
+
+__unknown_file (7
+store.com.buschmais.jqassistant.core.store.api.Store"__id*j
+
+__unknown_file (N*LA
+?org.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin"
+storeÑ
+Å
+
+__unknown_file (a
+contextMapperDescriptorForg.jqassistant.plugin.contextmapper.model.ContextMapperFileDescriptor"__id*|
+
+__unknown_file (`*^A
+?org.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin"
+contextMapperDescriptoré
+ã
+
+__unknown_file (b
+ContextMapperScannerPlugin.this?org.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin"__id*Ñ
+
+__unknown_file (h*fA
+?org.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin"!
+ContextMapperScannerPlugin.this*
+1*ò
+10 0('∂
+≥
+0 0(JB
+%11;org.jqassistant.plugin.contextmapper.model.DomainDescriptor"¥org.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin#processDomain(Lcom/buschmais/jqassistant/core/store/api/Store;Lorg/contextmapper/dsl/contextMappingDSL/Domain;Lorg/jqassistant/plugin/contextmapper/model/ContextMapperFileDescriptor;)Lorg/jqassistant/plugin/contextmapper/model/DomainDescriptor;*Ä
+
+__unknown_file (d
+b
+ContextMapperScannerPlugin.this?org.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin*U
+
+__unknown_file (9
+7
+store.com.buschmais.jqassistant.core.store.api.Store*Q
+
+__unknown_file (5
+3
+d.org.contextmapper.dsl.contextMappingDSL.Domain*
+
+__unknown_file (c
+a
+contextMapperDescriptorForg.jqassistant.plugin.contextmapper.model.ContextMapperFileDescriptor"P
+0 0(JD
+B
+%11;org.jqassistant.plugin.contextmapper.model.DomainDescriptor:?
+0 0(3
+d.org.contextmapper.dsl.contextMappingDSL.DomainB
+java.util.function.Function

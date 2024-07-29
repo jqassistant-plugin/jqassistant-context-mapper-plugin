@@ -1,0 +1,6 @@
+org.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin#createBoundedContextRelationship(Lcom/buschmais/jqassistant/core/store/api/Store;Lorg/jqassistant/plugin/contextmapper/model/BoundedContextDescriptor;[Ljava/lang/String;Lorg/jqassistant/plugin/contextmapper/model/BoundedContextDescriptor;[Ljava/lang/String;Ljava/lang/String;)V
+==
+create com.buschmais.jqassistant.core.store.api.Store#create(Lcom/buschmais/jqassistant/core/store/api/model/Descriptor;Ljava/lang/Class;Lcom/buschmais/jqassistant/core/store/api/model/Descriptor;)Lcom/buschmais/jqassistant/core/store/api/model/Descriptor;
+setType org.jqassistant.plugin.contextmapper.model.BoundedContextDependencyDescriptor#setType(Ljava/lang/String;)V
+setSourceRoles org.jqassistant.plugin.contextmapper.model.BoundedContextDependencyDescriptor#setSourceRoles([Ljava/lang/String;)V
+setTargetRoles org.jqassistant.plugin.contextmapper.model.BoundedContextDependencyDescriptor#setTargetRoles([Ljava/lang/String;)V

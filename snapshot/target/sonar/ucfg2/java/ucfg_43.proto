@@ -1,0 +1,143 @@
+
+ˆorg.jqassistant.plugin.contextmapper.report.ContextMapImageRenderer#renderDiagram(Lorg/contextmapper/contextmap/generator/model/ContextMap;Lcom/buschmais/jqassistant/core/rule/api/model/ExecutableRule;Ljava/io/File;Lguru/nidi/graphviz/engine/Format;)Ljava/io/File;·
+¬/home/runner/work/jqassistant-context-mapper-plugin/jqassistant-context-mapper-plugin/src/main/java/org/jqassistant/plugin/contextmapper/report/ContextMapImageRenderer.java ("1*ø
+1 (àÝ
+ (&
+%0java.lang.String"Lcom.buschmais.jqassistant.core.rule.api.model.Rule#getId()Ljava/lang/String;*b
+
+__unknown_file (F
+D
+rule<com.buschmais.jqassistant.core.rule.api.model.ExecutableRule2getId()º·
+ (8
+%1java.lang.String"\java.lang.String#replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;*4
+
+__unknown_file (
+
+%0java.lang.String*!
+
+__unknown_file (
+:*!
+
+__unknown_file (
+_29replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)g
+e
+ (>
+%2java.lang.String"__concat*$
+ (8
+
+%1java.lang.String*
+; (>
+.Œ
+‰
+A (Y
+%3java.lang.String"__id*_
+
+__unknown_file (C*A
+.
+
+fileFormat guru.nidi.graphviz.engine.Format"
+fileExtensionz
+x
+ (Y
+%4java.lang.String"__concat*$
+ (>
+
+%2java.lang.String*$
+A (Y
+
+%3java.lang.Stringf
+d
+ (Z
+fileNamejava.lang.String"__id*4
+
+__unknown_file (
+
+%4java.lang.String.,
+   (
+%5java.io.File"java.io.Fileò
+ï
+   (1
+%6"6java.io.File#<init>(Ljava/io/File;Ljava/lang/String;)V*0
+
+__unknown_file (
+
+%5java.io.File*7
+
+__unknown_file (
+
+	directoryjava.io.File*:
+
+__unknown_file (
+
+fileNamejava.lang.StringZ
+X
+   (2
+filejava.io.File"__id*0
+
+__unknown_file (
+
+%5java.io.File‹ˆ
+! !(@
+%7:org.contextmapper.contextmap.generator.ContextMapGenerator":org.contextmapper.contextmap.generator.ContextMapGenerator¹
+¶
+! !(!
+%8"Dorg.contextmapper.contextmap.generator.ContextMapGenerator#<init>()V*^
+
+__unknown_file (B
+@
+%7:org.contextmapper.contextmap.generator.ContextMapGenerator˜•
+! "(&@
+%9:org.contextmapper.contextmap.generator.ContextMapGenerator"‘org.contextmapper.contextmap.generator.ContextMapGenerator#setBaseDir(Ljava/io/File;)Lorg/contextmapper/contextmap/generator/ContextMapGenerator;*^
+
+__unknown_file (B
+@
+%7:org.contextmapper.contextmap.generator.ContextMapGenerator*7
+
+__unknown_file (
+
+	directoryjava.io.File2setBaseDir(Ljava/io/File;)‘Ž
+#< #(I
+%10java.nio.file.Path")java.io.File#toPath()Ljava/nio/file/Path;*2
+
+__unknown_file (
+
+filejava.io.File2toPath()œ™
+#< #(T
+%11java.lang.String"/java.nio.file.Path#toString()Ljava/lang/String;*7
+
+__unknown_file (
+
+%10java.nio.file.Path2
+toString()¯¬
+! #(U
+%12void"Äorg.contextmapper.contextmap.generator.ContextMapGenerator#generateContextMapGraphic(Lorg/contextmapper/contextmap/generator/model/ContextMap;Lguru/nidi/graphviz/engine/Format;Ljava/lang/String;)V*^
+
+__unknown_file (B
+@
+%9:org.contextmapper.contextmap.generator.ContextMapGenerator*\
+
+__unknown_file (@
+>
+map7org.contextmapper.contextmap.generator.model.ContextMap*L
+
+__unknown_file (0
+.
+
+fileFormat guru.nidi.graphviz.engine.Format*5
+
+__unknown_file (
+
+%11java.lang.String2ˆgenerateContextMapGraphic(Lorg/contextmapper/contextmap/generator/model/ContextMap;Lguru/nidi/graphviz/engine/Format;Ljava/lang/String;)""
+$ $(
+
+filejava.io.File:J
+ (->
+map7org.contextmapper.contextmap.generator.model.ContextMap:P
+. (BD
+rule<com.buschmais.jqassistant.core.rule.api.model.ExecutableRule:%
+C (R
+	directoryjava.io.File::
+S (d.
+
+fileFormat guru.nidi.graphviz.engine.FormatBGE
+Corg.jqassistant.plugin.contextmapper.report.ContextMapImageRendererH

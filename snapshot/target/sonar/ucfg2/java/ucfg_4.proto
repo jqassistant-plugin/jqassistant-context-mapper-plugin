@@ -1,0 +1,82 @@
+
+Åorg.jqassistant.plugin.contextmapper.report.ContextMapGenerator#generateContextMap(Lcom/buschmais/jqassistant/core/report/api/model/Result;)Lorg/contextmapper/contextmap/generator/model/ContextMap;³
+¨/home/runner/work/jqassistant-context-mapper-plugin/jqassistant-context-mapper-plugin/src/main/java/org/jqassistant/plugin/contextmapper/report/ContextMapGenerator.java1 1(("1* 
+12' 2(.Ü
+Ù
+2' 2(6F
+%0@org.jqassistant.plugin.contextmapper.report.ContextMapperDiagram"Ãorg.jqassistant.plugin.contextmapper.report.ContextMapGenerator#convert(Lcom/buschmais/jqassistant/core/report/api/model/Result;)Lorg/jqassistant/plugin/contextmapper/report/ContextMapperDiagram;*_
+
+__unknown_file (CA
+?org.jqassistant.plugin.contextmapper.report.ContextMapGenerator*^
+
+__unknown_file (B
+@
+result6com.buschmais.jqassistant.core.report.api.model.ResultÆ
+Ã
+2 2(7K
+diagram@org.jqassistant.plugin.contextmapper.report.ContextMapperDiagram"__id*d
+
+__unknown_file (H
+F
+%0@org.jqassistant.plugin.contextmapper.report.ContextMapperDiagram…‚
+3$ 3(.=
+%17org.contextmapper.contextmap.generator.model.ContextMap"7org.contextmapper.contextmap.generator.model.ContextMap³
+°
+3  3(0
+%2"Aorg.contextmapper.contextmap.generator.model.ContextMap#<init>()V*[
+
+__unknown_file (?
+=
+%17org.contextmapper.contextmap.generator.model.ContextMap·
+´
+3 3(1E
+
+contextMap7org.contextmapper.contextmap.generator.model.ContextMap"__id*[
+
+__unknown_file (?
+=
+%17org.contextmapper.contextmap.generator.model.ContextMap˜
+•
+6 6(9
+%3"__declareFunction*p
+
+__unknown_file (TR
+P__sonar_lambda_0$org.jqassistant.plugin.contextmapper.report.ContextMapGenerator˜
+•
+8C 8(I
+%4"__declareFunction*p
+
+__unknown_file (TR
+P__sonar_lambda_1$org.jqassistant.plugin.contextmapper.report.ContextMapGenerator¯
+¬
+8 8(J 
+%5java.util.stream.Collector"yjava.util.stream.Collectors#toMap(Ljava/util/function/Function;Ljava/util/function/Function;)Ljava/util/stream/Collector;*;
+
+__unknown_file ("
+java.util.stream.Collectors*"
+
+__unknown_file (
+""*"
+
+__unknown_file (
+
+%4˜
+•
+; ;(B
+%6"__declareFunction*p
+
+__unknown_file (TR
+P__sonar_lambda_2$org.jqassistant.plugin.contextmapper.report.ContextMapGenerator˜
+•
+< <(H
+%7"__declareFunction*p
+
+__unknown_file (TR
+P__sonar_lambda_3$org.jqassistant.plugin.contextmapper.report.ContextMapGenerator"S
+? ?(G
+E
+
+contextMap7org.contextmapper.contextmap.generator.model.ContextMap:L
+1) 1(P@
+result6com.buschmais.jqassistant.core.report.api.model.ResultBCA
+?org.jqassistant.plugin.contextmapper.report.ContextMapGeneratorH

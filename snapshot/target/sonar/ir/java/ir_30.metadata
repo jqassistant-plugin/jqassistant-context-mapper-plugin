@@ -1,0 +1,6 @@
+org.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin#getSubdomainByName(Ljava/util/List;Ljava/lang/String;)Ljava/util/Optional;
+==
+filter java.util.stream.Stream#filter(Ljava/util/function/Predicate;)Ljava/util/stream/Stream;
+stream java.util.Collection#stream()Ljava/util/stream/Stream;
+flatMap java.util.stream.Stream#flatMap(Ljava/util/function/Function;)Ljava/util/stream/Stream;
+findFirst java.util.stream.Stream#findFirst()Ljava/util/Optional;

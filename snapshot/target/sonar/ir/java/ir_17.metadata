@@ -1,0 +1,6 @@
+org.jqassistant.plugin.contextmapper.ContextMapperReportPlugin#configure(Lcom/buschmais/jqassistant/core/report/api/ReportContext;Ljava/util/Map;)V
+com.buschmais.jqassistant.core.report.api.ReportException#<init>(Ljava/lang/String;)V
+com.buschmais.jqassistant.core.report.api.ReportException#instance-init#
+==
+getReportDirectory com.buschmais.jqassistant.core.report.api.ReportContext#getReportDirectory(Ljava/lang/String;)Ljava/io/File;
+getOrDefault java.util.Map#getOrDefault(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;

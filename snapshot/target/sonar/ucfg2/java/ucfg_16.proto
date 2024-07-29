@@ -1,0 +1,461 @@
+
+œorg.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin#scan(Lcom/buschmais/jqassistant/plugin/common/api/scanner/filesystem/FileResource;Ljava/lang/String;Lcom/buschmais/jqassistant/core/scanner/api/Scope;Lcom/buschmais/jqassistant/core/scanner/api/Scanner;)Lorg/jqassistant/plugin/contextmapper/model/ContextMapperDescriptor;≥
+®/home/runner/work/jqassistant-context-mapper-plugin/jqassistant-context-mapper-plugin/src/main/java/org/jqassistant/plugin/contextmapper/ContextMapperScannerPlugin.java&# &('"startingBlock*⁄	
+startingBlock&' &(mœ
+Ã
+% %(
+%33"
+__annotate*2
+
+__unknown_file (
+java.lang.Override*y
+
+__unknown_file (]
+[
+fileResourceKcom.buschmais.jqassistant.plugin.common.api.scanner.filesystem.FileResourceù
+ö
+&5 &(A[
+fileResourceKcom.buschmais.jqassistant.plugin.common.api.scanner.filesystem.FileResource"__annotation*#
+
+__unknown_file (
+
+%33å
+â
+% %(
+%34"
+__annotate*2
+
+__unknown_file (
+java.lang.Override*6
+
+__unknown_file (
+
+pathjava.lang.StringY
+W
+&J &(N
+pathjava.lang.String"__annotation*#
+
+__unknown_file (
+
+%34≠
+™
+% %(
+%35"
+__annotate*2
+
+__unknown_file (
+java.lang.Override*W
+
+__unknown_file (;
+9
+scope0com.buschmais.jqassistant.core.scanner.api.Scopez
+x
+&V &([9
+scope0com.buschmais.jqassistant.core.scanner.api.Scope"__annotation*#
+
+__unknown_file (
+
+%35±
+Æ
+% %(
+%36"
+__annotate*2
+
+__unknown_file (
+java.lang.Override*[
+
+__unknown_file (?
+=
+scanner2com.buschmais.jqassistant.core.scanner.api.Scanner~
+|
+&e &(l=
+scanner2com.buschmais.jqassistant.core.scanner.api.Scanner"__annotation*#
+
+__unknown_file (
+
+%36*
+1*…U
+1'! '((µ≤
+'! '(5?
+%09com.buschmais.jqassistant.core.scanner.api.ScannerContext"zcom.buschmais.jqassistant.core.scanner.api.Scanner#getContext()Lcom/buschmais/jqassistant/core/scanner/api/ScannerContext;*[
+
+__unknown_file (?
+=
+scanner2com.buschmais.jqassistant.core.scanner.api.Scanner2getContext()∏
+µ
+' '(6D
+context9com.buschmais.jqassistant.core.scanner.api.ScannerContext"__id*]
+
+__unknown_file (A
+?
+%09com.buschmais.jqassistant.core.scanner.api.ScannerContext©¶
+( ((.4
+%1.com.buschmais.jqassistant.core.store.api.Store"tcom.buschmais.jqassistant.core.scanner.api.ScannerContext#getStore()Lcom/buschmais/jqassistant/core/store/api/Store;*b
+
+__unknown_file (F
+D
+context9com.buschmais.jqassistant.core.scanner.api.ScannerContext2
+getStore()†
+ù
+( ((/7
+store.com.buschmais.jqassistant.core.store.api.Store"__id*R
+
+__unknown_file (6
+4
+%1.com.buschmais.jqassistant.core.store.api.Storeø
+º
+*) *(XA
+%2;org.contextmapper.dsl.standalone.StandaloneContextMapperAPI"çorg.contextmapper.dsl.standalone.ContextMapperStandaloneSetup#getStandaloneAPI()Lorg/contextmapper/dsl/standalone/StandaloneContextMapperAPI;*]
+
+__unknown_file (A"?
+=org.contextmapper.dsl.standalone.ContextMapperStandaloneSetup∏
+µ
+* *(YB
+api;org.contextmapper.dsl.standalone.StandaloneContextMapperAPI"__id*_
+
+__unknown_file (C
+A
+%2;org.contextmapper.dsl.standalone.StandaloneContextMapperAPIåâ
++& +(<
+%3java.io.File"ccom.buschmais.jqassistant.plugin.common.api.scanner.filesystem.FileResource#getFile()Ljava/io/File;*y
+
+__unknown_file (]
+[
+fileResourceKcom.buschmais.jqassistant.plugin.common.api.scanner.filesystem.FileResource2	getFile()„‡
++ +(=+
+%4%org.contextmapper.dsl.cml.CMLResource"zorg.contextmapper.dsl.standalone.StandaloneContextMapperAPI#loadCML(Ljava/io/File;)Lorg/contextmapper/dsl/cml/CMLResource;*`
+
+__unknown_file (D
+B
+api;org.contextmapper.dsl.standalone.StandaloneContextMapperAPI*0
+
+__unknown_file (
+
+%3java.io.File2loadCML(Ljava/io/File;)å
+â
++ +(>,
+cml%org.contextmapper.dsl.cml.CMLResource"__id*I
+
+__unknown_file (-
++
+%4%org.contextmapper.dsl.cml.CMLResourceÿ’
+-V -(t?
+%59com.buschmais.jqassistant.core.store.api.model.Descriptor"ãcom.buschmais.jqassistant.core.scanner.api.ScannerContext#getCurrentDescriptor()Lcom/buschmais/jqassistant/core/store/api/model/Descriptor;*b
+
+__unknown_file (F
+D
+context9com.buschmais.jqassistant.core.scanner.api.ScannerContext2getCurrentDescriptor()„‡
+	-> -(òL
+%6Forg.jqassistant.plugin.contextmapper.model.ContextMapperFileDescriptor"…com.buschmais.jqassistant.core.store.api.Store#addDescriptorType(Lcom/buschmais/jqassistant/core/store/api/model/Descriptor;Ljava/lang/Class;)Lcom/buschmais/jqassistant/core/store/api/model/Descriptor;*U
+
+__unknown_file (9
+7
+store.com.buschmais.jqassistant.core.store.api.Store*]
+
+__unknown_file (A
+?
+%59com.buschmais.jqassistant.core.store.api.model.Descriptor*"
+
+__unknown_file (
+""2_addDescriptorType(Lcom/buschmais/jqassistant/core/store/api/model/Descriptor;Ljava/lang/Class;)„
+‡
+	- -(ôa
+contextMapperDescriptorForg.jqassistant.plugin.contextmapper.model.ContextMapperFileDescriptor"__id*j
+
+__unknown_file (N
+L
+%6Forg.jqassistant.plugin.contextmapper.model.ContextMapperFileDescriptor≥∞
+/? /([A
+%7;org.contextmapper.dsl.contextMappingDSL.ContextMappingModel"{org.contextmapper.dsl.cml.CMLResource#getContextMappingModel()Lorg/contextmapper/dsl/contextMappingDSL/ContextMappingModel;*J
+
+__unknown_file (.
+,
+cml%org.contextmapper.dsl.cml.CMLResource2getContextMappingModel()—
+Œ
+/) /(j
+%8java.util.List"iorg.eclipse.xtext.EcoreUtil2#eAllOfType(Lorg/eclipse/emf/ecore/EObject;Ljava/lang/Class;)Ljava/util/List;*<
+
+__unknown_file ( "
+org.eclipse.xtext.EcoreUtil2*_
+
+__unknown_file (C
+A
+%7;org.contextmapper.dsl.contextMappingDSL.ContextMappingModel*"
+
+__unknown_file (
+""¢ü
+/) /(s
+%9java.util.stream.Stream"6java.util.Collection#stream()Ljava/util/stream/Stream;*2
+
+__unknown_file (
+
+%8java.util.List2stream()∂
+≥
+0 0(J"
+%10java.util.function.Function"__declareFunction*p
+
+__unknown_file (TR
+P__sonar_lambda_6$org.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin©
+¶
+
+__unknown_file (-
+"
+%10java.util.function.Function"
+store"__id*U
+
+__unknown_file (9
+7
+store.com.buschmais.jqassistant.core.store.api.StoreÂ
+‚
+
+__unknown_file (?
+"
+%10java.util.function.Function"
+contextMapperDescriptor"__id*
+
+__unknown_file (c
+a
+contextMapperDescriptorForg.jqassistant.plugin.contextmapper.model.ContextMapperFileDescriptorÕ
+ 
+
+__unknown_file (G
+"
+%10java.util.function.Function"!
+ContextMapperScannerPlugin.this"__id*_
+
+__unknown_file (CA
+?org.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin•¢
+/) 0(K
+%12java.util.stream.Stream"Sjava.util.stream.Stream#map(Ljava/util/function/Function;)Ljava/util/stream/Stream;*;
+
+__unknown_file (
+
+%9java.util.stream.Stream*@
+
+__unknown_file ($
+"
+%10java.util.function.Function2"map(Ljava/util/function/Function;)Ø
+¨
+1 1(,!
+%13java.util.stream.Collector"@java.util.stream.Collectors#toList()Ljava/util/stream/Collector;*;
+
+__unknown_file ("
+java.util.stream.Collectorsõò
+/) 1(-
+%14java.util.List"Ojava.util.stream.Stream#collect(Ljava/util/stream/Collector;)Ljava/lang/Object;*<
+
+__unknown_file ( 
+
+%12java.util.stream.Stream*?
+
+__unknown_file (#
+!
+%13java.util.stream.Collector2%collect(Ljava/util/stream/Collector;)b
+`
+/ 1(.
+domainsjava.util.List"__id*3
+
+__unknown_file (
+
+%14java.util.List¥±
+3O 3(kB
+%15;org.contextmapper.dsl.contextMappingDSL.ContextMappingModel"{org.contextmapper.dsl.cml.CMLResource#getContextMappingModel()Lorg/contextmapper/dsl/contextMappingDSL/ContextMappingModel;*J
+
+__unknown_file (.
+,
+cml%org.contextmapper.dsl.cml.CMLResource2getContextMappingModel()‘
+—
+	39 3(Ç
+%16java.util.List"iorg.eclipse.xtext.EcoreUtil2#eAllOfType(Lorg/eclipse/emf/ecore/EObject;Ljava/lang/Class;)Ljava/util/List;*<
+
+__unknown_file ( "
+org.eclipse.xtext.EcoreUtil2*`
+
+__unknown_file (D
+B
+%15;org.contextmapper.dsl.contextMappingDSL.ContextMappingModel*"
+
+__unknown_file (
+""•¢
+	39 3(ã
+%17java.util.stream.Stream"6java.util.Collection#stream()Ljava/util/stream/Stream;*3
+
+__unknown_file (
+
+%16java.util.List2stream()∂
+≥
+4 4(?"
+%18java.util.function.Function"__declareFunction*p
+
+__unknown_file (TR
+P__sonar_lambda_7$org.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin©
+¶
+
+__unknown_file (-
+"
+%18java.util.function.Function"
+store"__id*U
+
+__unknown_file (9
+7
+store.com.buschmais.jqassistant.core.store.api.Storeç
+ä
+
+__unknown_file (/
+"
+%18java.util.function.Function"	
+domains"__id*7
+
+__unknown_file (
+
+domainsjava.util.ListÕ
+ 
+
+__unknown_file (G
+"
+%18java.util.function.Function"!
+ContextMapperScannerPlugin.this"__id*_
+
+__unknown_file (CA
+?org.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin¶£
+39 4(@
+%20java.util.stream.Stream"Sjava.util.stream.Stream#map(Ljava/util/function/Function;)Ljava/util/stream/Stream;*<
+
+__unknown_file ( 
+
+%17java.util.stream.Stream*@
+
+__unknown_file ($
+"
+%18java.util.function.Function2"map(Ljava/util/function/Function;)Ø
+¨
+5 5((!
+%21java.util.stream.Collector"@java.util.stream.Collectors#toList()Ljava/util/stream/Collector;*;
+
+__unknown_file ("
+java.util.stream.Collectorsõò
+39 5()
+%22java.util.List"Ojava.util.stream.Stream#collect(Ljava/util/stream/Collector;)Ljava/lang/Object;*<
+
+__unknown_file ( 
+
+%20java.util.stream.Stream*?
+
+__unknown_file (#
+!
+%21java.util.stream.Collector2%collect(Ljava/util/stream/Collector;)j
+h
+3 5(*!
+boundedContextsjava.util.List"__id*3
+
+__unknown_file (
+
+%22java.util.List¥±
+7 7(:B
+%23;org.contextmapper.dsl.contextMappingDSL.ContextMappingModel"{org.contextmapper.dsl.cml.CMLResource#getContextMappingModel()Lorg/contextmapper/dsl/contextMappingDSL/ContextMappingModel;*J
+
+__unknown_file (.
+,
+cml%org.contextmapper.dsl.cml.CMLResource2getContextMappingModel()”
+–
+7 7(M
+%24java.util.List"iorg.eclipse.xtext.EcoreUtil2#eAllOfType(Lorg/eclipse/emf/ecore/EObject;Ljava/lang/Class;)Ljava/util/List;*<
+
+__unknown_file ( "
+org.eclipse.xtext.EcoreUtil2*`
+
+__unknown_file (D
+B
+%23;org.contextmapper.dsl.contextMappingDSL.ContextMappingModel*"
+
+__unknown_file (
+""§°
+7 7(V
+%25java.util.stream.Stream"6java.util.Collection#stream()Ljava/util/stream/Stream;*3
+
+__unknown_file (
+
+%24java.util.List2stream()∂
+≥
+8 8(F"
+%26java.util.function.Function"__declareFunction*p
+
+__unknown_file (TR
+P__sonar_lambda_8$org.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin©
+¶
+
+__unknown_file (-
+"
+%26java.util.function.Function"
+store"__id*U
+
+__unknown_file (9
+7
+store.com.buschmais.jqassistant.core.store.api.Storeù
+ö
+
+__unknown_file (7
+"
+%26java.util.function.Function"
+boundedContexts"__id*?
+
+__unknown_file (#
+!
+boundedContextsjava.util.ListÕ
+ 
+
+__unknown_file (G
+"
+%26java.util.function.Function"!
+ContextMapperScannerPlugin.this"__id*_
+
+__unknown_file (CA
+?org.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin¶£
+7 8(G
+%28java.util.stream.Stream"Sjava.util.stream.Stream#map(Ljava/util/function/Function;)Ljava/util/stream/Stream;*<
+
+__unknown_file ( 
+
+%25java.util.stream.Stream*@
+
+__unknown_file ($
+"
+%26java.util.function.Function2"map(Ljava/util/function/Function;)∂
+≥
+9 9(M"
+%29java.util.function.Consumer"__declareFunction*p
+
+__unknown_file (TR
+P__sonar_lambda_9$org.jqassistant.plugin.contextmapper.ContextMapperScannerPluginÂ
+‚
+
+__unknown_file (?
+"
+%29java.util.function.Consumer"
+contextMapperDescriptor"__id*
+
+__unknown_file (c
+a
+contextMapperDescriptorForg.jqassistant.plugin.contextmapper.model.ContextMapperFileDescriptorÉÄ
+7 9(N
+%32void"?java.util.stream.Stream#forEach(Ljava/util/function/Consumer;)V*<
+
+__unknown_file ( 
+
+%28java.util.stream.Stream*@
+
+__unknown_file ($
+"
+%29java.util.function.Consumer2&forEach(Ljava/util/function/Consumer;)"o
+; ;('c
+a
+contextMapperDescriptorForg.jqassistant.plugin.contextmapper.model.ContextMapperFileDescriptor:g
+&( &(B[
+fileResourceKcom.buschmais.jqassistant.plugin.common.api.scanner.filesystem.FileResource:$
+&C &(O
+pathjava.lang.String:E
+&P &(\9
+scope0com.buschmais.jqassistant.core.scanner.api.Scope:I
+&] &(l=
+scanner2com.buschmais.jqassistant.core.scanner.api.ScannerBCA
+?org.jqassistant.plugin.contextmapper.ContextMapperScannerPluginH

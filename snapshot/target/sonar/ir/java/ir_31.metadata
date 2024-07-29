@@ -1,0 +1,6 @@
+org.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin#getBoundedContextByName(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)Ljava/util/Optional;
+java.util.Optional#empty()Ljava/util/Optional;
+==
+filter java.util.stream.Stream#filter(Ljava/util/function/Predicate;)Ljava/util/stream/Stream;
+stream java.util.Collection#stream()Ljava/util/stream/Stream;
+findFirst java.util.stream.Stream#findFirst()Ljava/util/Optional;

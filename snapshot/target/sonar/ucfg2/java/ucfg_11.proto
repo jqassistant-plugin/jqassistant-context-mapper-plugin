@@ -1,0 +1,84 @@
+
+Ûorg.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin#accepts(Lcom/buschmais/jqassistant/plugin/common/api/scanner/filesystem/FileResource;Ljava/lang/String;Lcom/buschmais/jqassistant/core/scanner/api/Scope;)Z³
+¨/home/runner/work/jqassistant-context-mapper-plugin/jqassistant-context-mapper-plugin/src/main/java/org/jqassistant/plugin/contextmapper/ContextMapperScannerPlugin.java! !("startingBlock* 
+startingBlock! !(OÎ
+Ë
+   (
+%2"
+__annotate*2
+
+__unknown_file (
+java.lang.Override*y
+
+__unknown_file (]
+[
+fileResourceKcom.buschmais.jqassistant.plugin.common.api.scanner.filesystem.FileResourceœ
+™
+!( !(4[
+fileResourceKcom.buschmais.jqassistant.plugin.common.api.scanner.filesystem.FileResource"__annotation*"
+
+__unknown_file (
+
+%2‹
+ˆ
+   (
+%3"
+__annotate*2
+
+__unknown_file (
+java.lang.Override*6
+
+__unknown_file (
+
+pathjava.lang.StringX
+V
+!= !(A
+pathjava.lang.String"__annotation*"
+
+__unknown_file (
+
+%3¬
+©
+   (
+%4"
+__annotate*2
+
+__unknown_file (
+java.lang.Override*W
+
+__unknown_file (;
+9
+scope0com.buschmais.jqassistant.core.scanner.api.Scopey
+w
+!I !(N9
+scope0com.buschmais.jqassistant.core.scanner.api.Scope"__annotation*"
+
+__unknown_file (
+
+%4*
+1*‹
+1" "(ž›
+" "(!
+%0java.lang.String"0java.lang.String#toLowerCase()Ljava/lang/String;*6
+
+__unknown_file (
+
+pathjava.lang.String2toLowerCase()ÆÃ
+" "(2
+%1boolean".java.lang.String#endsWith(Ljava/lang/String;)Z*4
+
+__unknown_file (
+
+%0java.lang.String*$
+
+__unknown_file (
+.cml2endsWith(Ljava/lang/String;)"
+" "(3
+"":g
+! !(5[
+fileResourceKcom.buschmais.jqassistant.plugin.common.api.scanner.filesystem.FileResource:$
+!6 !(B
+pathjava.lang.String:E
+!C !(N9
+scope0com.buschmais.jqassistant.core.scanner.api.ScopeBCA
+?org.jqassistant.plugin.contextmapper.ContextMapperScannerPluginHX

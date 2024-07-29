@@ -1,0 +1,55 @@
+
+P__sonar_lambda_7$org.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin³
+¨/home/runner/work/jqassistant-context-mapper-plugin/jqassistant-context-mapper-plugin/src/main/java/org/jqassistant/plugin/contextmapper/ContextMapperScannerPlugin.java4 4(?"startingBlock*©
+startingBlock4 4(?È
+Å
+
+__unknown_file (7
+store.com.buschmais.jqassistant.core.store.api.Store"__id*j
+
+__unknown_file (N*LA
+?org.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin"
+store¬
+©
+
+__unknown_file (
+domainsjava.util.List"__id*l
+
+__unknown_file (P*NA
+?org.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin"	
+domainsŽ
+‹
+
+__unknown_file (b
+ContextMapperScannerPlugin.this?org.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin"__id*„
+
+__unknown_file (h*fA
+?org.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin"!
+ContextMapperScannerPlugin.this*
+1*É
+14 4(,ß
+Ü
+4 4(?J
+%19Corg.jqassistant.plugin.contextmapper.model.BoundedContextDescriptor"•org.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin#processBoundedContexts(Lcom/buschmais/jqassistant/core/store/api/Store;Ljava/util/List;Lorg/contextmapper/dsl/contextMappingDSL/BoundedContext;)Lorg/jqassistant/plugin/contextmapper/model/BoundedContextDescriptor;*€
+
+__unknown_file (d
+b
+ContextMapperScannerPlugin.this?org.jqassistant.plugin.contextmapper.ContextMapperScannerPlugin*U
+
+__unknown_file (9
+7
+store.com.buschmais.jqassistant.core.store.api.Store*7
+
+__unknown_file (
+
+domainsjava.util.List*Y
+
+__unknown_file (=
+;
+b6org.contextmapper.dsl.contextMappingDSL.BoundedContext"X
+4 4(?L
+J
+%19Corg.jqassistant.plugin.contextmapper.model.BoundedContextDescriptor:G
+4 4(;
+b6org.contextmapper.dsl.contextMappingDSL.BoundedContextB
+java.util.function.Function
