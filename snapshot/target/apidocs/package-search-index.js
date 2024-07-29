@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"org.jqassistant.plugin.contextmapper"},{"l":"org.jqassistant.plugin.contextmapper.model"},{"l":"org.jqassistant.plugin.contextmapper.report"}]
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"org.jqassistant.plugin.contextmapper"},{"l":"org.jqassistant.plugin.contextmapper.model"},{"l":"org.jqassistant.plugin.contextmapper.report"}];updateSearchResults();
