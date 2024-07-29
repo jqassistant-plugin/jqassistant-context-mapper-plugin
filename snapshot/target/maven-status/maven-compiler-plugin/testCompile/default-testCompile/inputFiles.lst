@@ -1,5 +1,5 @@
 /home/runner/work/jqassistant-context-mapper-plugin/jqassistant-context-mapper-plugin/src/test/java/org/jqassistant/plugin/contextmapper/report/ContextMapGeneratorIT.java
-/home/runner/work/jqassistant-context-mapper-plugin/jqassistant-context-mapper-plugin/src/test/java/org/jqassistant/plugin/contextmapper/scanner/FullPropertyMapIT.java
-/home/runner/work/jqassistant-context-mapper-plugin/jqassistant-context-mapper-plugin/src/test/java/org/jqassistant/plugin/contextmapper/scanner/UndefinedBoundedContextMapIT.java
 /home/runner/work/jqassistant-context-mapper-plugin/jqassistant-context-mapper-plugin/src/test/java/org/jqassistant/plugin/contextmapper/report/ContextMapperReportPluginIT.java
+/home/runner/work/jqassistant-context-mapper-plugin/jqassistant-context-mapper-plugin/src/test/java/org/jqassistant/plugin/contextmapper/scanner/FullPropertyMapIT.java
 /home/runner/work/jqassistant-context-mapper-plugin/jqassistant-context-mapper-plugin/src/test/java/org/jqassistant/plugin/contextmapper/scanner/InsuranceContextMapIT.java
+/home/runner/work/jqassistant-context-mapper-plugin/jqassistant-context-mapper-plugin/src/test/java/org/jqassistant/plugin/contextmapper/scanner/UndefinedBoundedContextMapIT.java
