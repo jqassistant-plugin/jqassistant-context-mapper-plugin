@@ -58,7 +58,7 @@
         <dependency>
             <groupId>org.contextmapper</groupId>
             <artifactId>context-mapper-dsl</artifactId>
-            <version>6.6.1</version>
+            <version>6.11.0</version>
             <exclusions>
                 <exclusion>
                     <!-- Exclusion added to remove transitive dependency to Equinox, which requires Java 11 -->
