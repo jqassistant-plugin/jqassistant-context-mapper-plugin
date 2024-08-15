@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jqassistant-report xmlns="http://schema.jqassistant.org/report/v2.3">
-  <group id="jqassistant-plugin:Default" date="2024-08-02T00:59:02">
-    <group id="jqassistant-plugin-maven:Default" date="2024-08-02T00:59:02">
+  <group id="jqassistant-plugin:Default" date="2024-08-15T16:19:21">
+    <group id="jqassistant-plugin-maven:Default" date="2024-08-15T16:19:21">
       <constraint id="jqassistant-plugin-maven:GroupId">
         <description>The groupId for jQAssistant plugin Maven projects must follow the pattern 'org.jqassistant.plugin.&lt;project&gt;'.</description>
         <status>success</status>
         <severity level="2">major</severity>
-        <duration>59</duration>
+        <duration>61</duration>
       </constraint>
       <concept id="jqassistant-plugin-maven:ParentProject">
         <description>Labels all Maven projects which declare "org.jqassistant.plugin:parent" as parent module with "Parent".</description>
@@ -32,7 +32,7 @@
         <description>All Maven projects must define the same groupId as the parent of the plugin project.</description>
         <status>success</status>
         <severity level="2">major</severity>
-        <duration>50</duration>
+        <duration>52</duration>
         <required-concept id="jqassistant-plugin-maven:ParentProject">
           <status>success</status>
         </required-concept>
@@ -41,7 +41,7 @@
         <description>At least one developer must be specified in the "developers" section of the parent pom.xml of a plugin project.</description>
         <status>success</status>
         <severity level="2">major</severity>
-        <duration>62</duration>
+        <duration>63</duration>
         <required-concept id="jqassistant-plugin-maven:ParentProject">
           <status>success</status>
         </required-concept>
@@ -50,7 +50,7 @@
         <description>A SCM section having both connection and developerConnection set to "scm:git:https://github.com/jqassistant-plugin/_repository-name_" must be specified in the parent pom.xml of a plugin project.</description>
         <status>success</status>
         <severity level="2">major</severity>
-        <duration>70</duration>
+        <duration>69</duration>
         <required-concept id="jqassistant-plugin-maven:ParentProject">
           <status>success</status>
         </required-concept>
@@ -59,14 +59,14 @@
         <description>The project URL must be defined in the parent pom.xml of a plugin project.</description>
         <status>success</status>
         <severity level="2">major</severity>
-        <duration>144</duration>
+        <duration>147</duration>
         <required-concept id="jqassistant-plugin-maven:ParentProject">
           <status>success</status>
         </required-concept>
       </constraint>
-      <duration>665</duration>
+      <duration>661</duration>
     </group>
-    <group id="jqassistant-plugin-test:Default" date="2024-08-02T00:59:03">
+    <group id="jqassistant-plugin-test:Default" date="2024-08-15T16:19:22">
       <concept id="junit5:ParameterizedTestMethod">
         <description>Finds all test methods (i.e. annotated with "@org.junit.jupiter.api.ParameterizedTest") and
 labels them with "Test", "Parameterized", and "Junit5".</description>
@@ -82,6 +82,15 @@ labels them with "Test" and "Junit5".</description>
             <column>Test</column>
           </columns>
           <rows count="7">
+            <row key="96c8535732ebfac8b40817291c2a1e726f7bba5fec86ce026f0edc92be6bb538">
+              <column name="Test">
+                <element language="Java">Method</element>
+                <source fileName="/org/jqassistant/plugin/contextmapper/report/ContextMapGeneratorIT.java" startLine="38" endLine="73">
+                  <parent fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-context-mapper-plugin/2.1.0-SNAPSHOT/jqassistant-context-mapper-plugin-2.1.0-SNAPSHOT-tests.test-jar" group="org.jqassistant.plugin" name="jqassistant-context-mapper-plugin" type="test-jar" version="2.1.0-SNAPSHOT" classifier="tests"></parent>
+                </source>
+                <value>void testContextMapperNodes()</value>
+              </column>
+            </row>
             <row key="8cbbe473b795f32b20560c0a15019a30b64bb365aedf9bfb7a44650536f0f935">
               <column name="Test">
                 <element language="Java">Method</element>
@@ -89,15 +98,6 @@ labels them with "Test" and "Junit5".</description>
                   <parent fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-context-mapper-plugin/2.1.0-SNAPSHOT/jqassistant-context-mapper-plugin-2.1.0-SNAPSHOT-tests.test-jar" group="org.jqassistant.plugin" name="jqassistant-context-mapper-plugin" type="test-jar" version="2.1.0-SNAPSHOT" classifier="tests"></parent>
                 </source>
                 <value>void testInsuranceExample2()</value>
-              </column>
-            </row>
-            <row key="7c3bb458aa7c50b822b9843d3ad0b9a1b5b6251d488337121be6ac03d9ab7f10">
-              <column name="Test">
-                <element language="Java">Method</element>
-                <source fileName="/org/jqassistant/plugin/contextmapper/report/ContextMapGeneratorIT.java" startLine="77" endLine="104">
-                  <parent fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-context-mapper-plugin/2.1.0-SNAPSHOT/jqassistant-context-mapper-plugin-2.1.0-SNAPSHOT-tests.test-jar" group="org.jqassistant.plugin" name="jqassistant-context-mapper-plugin" type="test-jar" version="2.1.0-SNAPSHOT" classifier="tests"></parent>
-                </source>
-                <value>void testJMoleculesNodes()</value>
               </column>
             </row>
             <row key="4b0ce45eda8f2259faeb7061125def51b3a746dc33d57952bdb939a41c77a9a0">
@@ -136,34 +136,34 @@ labels them with "Test" and "Junit5".</description>
                 <value>void scan()</value>
               </column>
             </row>
-            <row key="96c8535732ebfac8b40817291c2a1e726f7bba5fec86ce026f0edc92be6bb538">
+            <row key="7c3bb458aa7c50b822b9843d3ad0b9a1b5b6251d488337121be6ac03d9ab7f10">
               <column name="Test">
                 <element language="Java">Method</element>
-                <source fileName="/org/jqassistant/plugin/contextmapper/report/ContextMapGeneratorIT.java" startLine="38" endLine="73">
+                <source fileName="/org/jqassistant/plugin/contextmapper/report/ContextMapGeneratorIT.java" startLine="77" endLine="104">
                   <parent fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-context-mapper-plugin/2.1.0-SNAPSHOT/jqassistant-context-mapper-plugin-2.1.0-SNAPSHOT-tests.test-jar" group="org.jqassistant.plugin" name="jqassistant-context-mapper-plugin" type="test-jar" version="2.1.0-SNAPSHOT" classifier="tests"></parent>
                 </source>
-                <value>void testContextMapperNodes()</value>
+                <value>void testJMoleculesNodes()</value>
               </column>
             </row>
           </rows>
         </result>
         <status>success</status>
         <severity level="4">info</severity>
-        <duration>59</duration>
+        <duration>61</duration>
       </concept>
       <concept id="junit5:TestTemplateMethod">
         <description>Labels all methods annotated by "@org.junit.jupiter.api.TestTemplate"
 with "Junit5", "Test" and "Template".</description>
         <status>success</status>
         <severity level="4">info</severity>
-        <duration>61</duration>
+        <duration>62</duration>
       </concept>
       <concept id="junit5:RepeatedTestMethod">
         <description>Finds all test methods (i.e. annotated with "@org.junit.jupiter.api.RepeatedTest") and
 labels them with "Test", "Repeated", and "Junit5".</description>
         <status>success</status>
         <severity level="4">info</severity>
-        <duration>39</duration>
+        <duration>40</duration>
       </concept>
       <concept id="junit5:TestClass">
         <description>Labels all classes containing test methods with "Test" and "Junit5".</description>
@@ -173,6 +173,18 @@ labels them with "Test", "Repeated", and "Junit5".</description>
             <column>TestMethods</column>
           </columns>
           <rows count="5">
+            <row key="dfcb8cc86cb3ad2f034a49266a8e74f146f6c3834841147208b3d591293193cd">
+              <column name="TestClass">
+                <element language="Java">Type</element>
+                <source fileName="/org/jqassistant/plugin/contextmapper/scanner/FullPropertyMapIT.java">
+                  <parent fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-context-mapper-plugin/2.1.0-SNAPSHOT/jqassistant-context-mapper-plugin-2.1.0-SNAPSHOT-tests.test-jar" group="org.jqassistant.plugin" name="jqassistant-context-mapper-plugin" type="test-jar" version="2.1.0-SNAPSHOT" classifier="tests"></parent>
+                </source>
+                <value>org.jqassistant.plugin.contextmapper.scanner.FullPropertyMapIT</value>
+              </column>
+              <column name="TestMethods">
+                <value>void testFullPropertyExample()</value>
+              </column>
+            </row>
             <row key="bf5240b74a660f7ad3dd7fb49e4ec1799ccd6550c03e7d7e03c03ae70af77487">
               <column name="TestClass">
                 <element language="Java">Type</element>
@@ -195,18 +207,6 @@ labels them with "Test", "Repeated", and "Junit5".</description>
               </column>
               <column name="TestMethods">
                 <value>void testInsuranceExample1(), void testInsuranceExample2()</value>
-              </column>
-            </row>
-            <row key="dfcb8cc86cb3ad2f034a49266a8e74f146f6c3834841147208b3d591293193cd">
-              <column name="TestClass">
-                <element language="Java">Type</element>
-                <source fileName="/org/jqassistant/plugin/contextmapper/scanner/FullPropertyMapIT.java">
-                  <parent fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-context-mapper-plugin/2.1.0-SNAPSHOT/jqassistant-context-mapper-plugin-2.1.0-SNAPSHOT-tests.test-jar" group="org.jqassistant.plugin" name="jqassistant-context-mapper-plugin" type="test-jar" version="2.1.0-SNAPSHOT" classifier="tests"></parent>
-                </source>
-                <value>org.jqassistant.plugin.contextmapper.scanner.FullPropertyMapIT</value>
-              </column>
-              <column name="TestMethods">
-                <value>void testFullPropertyExample()</value>
               </column>
             </row>
             <row key="ec65cf841944ba6cd75ef362a51b624ca3a4026035c0756500c32db7312df43d">
@@ -237,7 +237,7 @@ labels them with "Test", "Repeated", and "Junit5".</description>
         </result>
         <status>success</status>
         <severity level="4">info</severity>
-        <duration>77</duration>
+        <duration>75</duration>
         <required-concept id="junit5:ParameterizedTestMethod">
           <status>success</status>
         </required-concept>
@@ -255,7 +255,7 @@ labels them with "Test", "Repeated", and "Junit5".</description>
         <description>Adds a label "IntegrationTest" to all non-abstract classes deriving from AbstractPluginIT or AbstractJavaPluginIT.</description>
         <status>success</status>
         <severity level="4">info</severity>
-        <duration>115</duration>
+        <duration>118</duration>
         <required-concept id="junit5:TestClass">
           <status>success</status>
         </required-concept>
@@ -264,19 +264,19 @@ labels them with "Test", "Repeated", and "Junit5".</description>
         <description>All integration test classes must have the name suffix "IT" for being executed using the Maven Failsafe Plugin.</description>
         <status>success</status>
         <severity level="2">major</severity>
-        <duration>19</duration>
+        <duration>20</duration>
         <required-concept id="jqassistant-plugin-test:IT">
           <status>success</status>
         </required-concept>
       </constraint>
-      <duration>470</duration>
+      <duration>477</duration>
     </group>
-    <group id="jqassistant-plugin-plugin:Default" date="2024-08-02T00:59:03">
+    <group id="jqassistant-plugin-plugin:Default" date="2024-08-15T16:19:22">
       <concept id="neo4j:Procedure">
         <description>Labels all types annotated with "@org.neo4j.procedure.Procedure" with `Neo4j` and `Procedure`.</description>
         <status>success</status>
         <severity level="4">info</severity>
-        <duration>36</duration>
+        <duration>38</duration>
       </concept>
       <concept id="jqassistant-plugin-plugin:PluginDescriptor">
         <description>Labels jQAssistant plugin descriptor files with `jQAssistant` and `PluginDescriptor`.</description>
@@ -304,14 +304,14 @@ labels them with "Test", "Repeated", and "Junit5".</description>
         </result>
         <status>success</status>
         <severity level="4">info</severity>
-        <duration>48</duration>
+        <duration>45</duration>
       </concept>
       <concept id="jqassistant-plugin-plugin:PluginRegistersProcedure">
         <description>Creates a `REGISTERS` relation between all procedure class elements of the jQAssistant plugin
             descriptor to the matching Java type.</description>
         <status>success</status>
         <severity level="4">info</severity>
-        <duration>126</duration>
+        <duration>123</duration>
         <required-concept id="jqassistant-plugin-plugin:PluginDescriptor">
           <status>success</status>
         </required-concept>
@@ -320,7 +320,7 @@ labels them with "Test", "Repeated", and "Junit5".</description>
         <description>Types declaring Neo4j procedures must be registered.</description>
         <status>success</status>
         <severity level="2">major</severity>
-        <duration>38</duration>
+        <duration>37</duration>
         <required-concept id="neo4j:Procedure">
           <status>success</status>
         </required-concept>
@@ -333,14 +333,14 @@ labels them with "Test", "Repeated", and "Junit5".</description>
             `UserFunction`.</description>
         <status>success</status>
         <severity level="4">info</severity>
-        <duration>33</duration>
+        <duration>34</duration>
       </concept>
       <concept id="jqassistant-plugin-plugin:PluginRegistersUserFunction">
         <description>Creates a `REGISTERS` relation between all function class elements of the jQAssistant plugin
             descriptor to the matching Java type.</description>
         <status>success</status>
         <severity level="4">info</severity>
-        <duration>115</duration>
+        <duration>95</duration>
         <required-concept id="jqassistant-plugin-plugin:PluginDescriptor">
           <status>success</status>
         </required-concept>
@@ -349,7 +349,7 @@ labels them with "Test", "Repeated", and "Junit5".</description>
         <description>Types declaring Neo4j user functions must be registered.</description>
         <status>success</status>
         <severity level="2">major</severity>
-        <duration>38</duration>
+        <duration>33</duration>
         <required-concept id="neo4j:UserFunction">
           <status>success</status>
         </required-concept>
@@ -383,14 +383,14 @@ labels them with "Test", "Repeated", and "Junit5".</description>
         </result>
         <status>warning</status>
         <severity level="3">minor</severity>
-        <duration>135</duration>
+        <duration>138</duration>
         <required-concept id="jqassistant-plugin-plugin:PluginDescriptor">
           <status>success</status>
         </required-concept>
       </constraint>
-      <duration>614</duration>
+      <duration>580</duration>
     </group>
-    <group id="jqassistant-plugin-package:Default" date="2024-08-02T00:59:04">
+    <group id="jqassistant-plugin-package:Default" date="2024-08-15T16:19:23">
       <concept id="java:GeneratedLombokType">
         <description>Labels types generated by Lombok as 'Generated' (requires 'lombok.addLombokGeneratedAnnotation=true' in 'lombok.config').</description>
         <result>
@@ -407,7 +407,7 @@ labels them with "Test", "Repeated", and "Junit5".</description>
         </result>
         <status>success</status>
         <severity level="4">info</severity>
-        <duration>45</duration>
+        <duration>47</duration>
       </concept>
       <concept id="java:GeneratedType">
         <description>Reports the count of types labeled with `Generated`, grouped by containing artifact.</description>
@@ -422,13 +422,13 @@ labels them with "Test", "Repeated", and "Junit5".</description>
         <description>All package names used in a Maven project must start with the groupId.</description>
         <status>success</status>
         <severity level="2">major</severity>
-        <duration>67</duration>
+        <duration>72</duration>
         <required-concept id="java:GeneratedType">
           <status>success</status>
         </required-concept>
       </constraint>
-      <duration>128</duration>
+      <duration>131</duration>
     </group>
-    <duration>128</duration>
+    <duration>132</duration>
   </group>
 </jqassistant-report>
