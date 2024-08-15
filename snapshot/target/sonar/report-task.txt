@@ -1,7 +1,7 @@
 organization=jqassistant-plugin
 projectKey=org.jqassistant.plugin:jqassistant-context-mapper-plugin
 serverUrl=https://sonarcloud.io
-serverVersion=8.0.0.56137
+serverVersion=8.0.0.56312
 dashboardUrl=https://sonarcloud.io/dashboard?id=org.jqassistant.plugin%3Ajqassistant-context-mapper-plugin&branch=main&resolved=false
-ceTaskId=AZD9iaZdeNiiin40rg-i
-ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AZD9iaZdeNiiin40rg-i
+ceTaskId=AZFW1unfH7t49HB6sG97
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AZFW1unfH7t49HB6sG97
