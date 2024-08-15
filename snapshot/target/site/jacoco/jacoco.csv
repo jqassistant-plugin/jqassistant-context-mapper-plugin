@@ -1,10 +1,10 @@
 GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
-jqassistant-context-mapper-plugin,org.jqassistant.plugin.contextmapper.model,BoundedContextDependencyType,2,79,2,7,1,15,2,7,0,3
+jqassistant-context-mapper-plugin,org.jqassistant.plugin.contextmapper.model,BoundedContextDependencyType,2,62,2,7,1,15,2,7,0,3
 jqassistant-context-mapper-plugin,org.jqassistant.plugin.contextmapper,ContextMapperScannerPlugin,31,519,11,25,5,95,13,40,3,32
 jqassistant-context-mapper-plugin,org.jqassistant.plugin.contextmapper,ContextMapperReportPlugin,23,67,2,1,7,15,2,4,0,4
 jqassistant-context-mapper-plugin,org.jqassistant.plugin.contextmapper.report,ContextMapperLanguage.ContextMapperLanguageElement.new ContextMapperLanguage.ContextMapperLanguageElement() {...},5,5,0,0,1,1,2,1,2,1
 jqassistant-context-mapper-plugin,org.jqassistant.plugin.contextmapper.report,ContextMapperLanguage.ContextMapperLanguageElement.new ContextMapperLanguage.ContextMapperLanguageElement() {...},5,5,0,0,1,1,2,1,2,1
 jqassistant-context-mapper-plugin,org.jqassistant.plugin.contextmapper.report,ContextMapperLanguage.ContextMapperLanguageElement.new ContextMapperLanguage.ContextMapperLanguageElement() {...},0,10,0,0,0,2,0,3,0,3
-jqassistant-context-mapper-plugin,org.jqassistant.plugin.contextmapper.report,ContextMapperLanguage.ContextMapperLanguageElement,0,36,0,0,0,5,0,2,0,2
+jqassistant-context-mapper-plugin,org.jqassistant.plugin.contextmapper.report,ContextMapperLanguage.ContextMapperLanguageElement,0,23,0,0,0,5,0,2,0,2
 jqassistant-context-mapper-plugin,org.jqassistant.plugin.contextmapper.report,ContextMapGenerator,8,265,4,28,1,52,4,25,0,13
 jqassistant-context-mapper-plugin,org.jqassistant.plugin.contextmapper.report,ContextMapImageRenderer,0,31,0,0,0,7,0,2,0,2
