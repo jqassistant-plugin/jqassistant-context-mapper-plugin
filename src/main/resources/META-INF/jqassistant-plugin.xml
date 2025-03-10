@@ -2,7 +2,7 @@
                     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                     xsi:schemaLocation="http://schema.jqassistant.org/plugin/v1.10 https://schema.jqassistant.org/plugin/jqassistant-plugin-v1.10.xsd"
                     name="jQAssistant Context Mapper Plugin" id="jqa.plugin.contextmapper">
-    <description>Provides a scanner for ContextMapper files and renderer for ContextMapper diagrams.</description>
+    <description>${project.description}</description>
     <model>
         <class>org.jqassistant.plugin.contextmapper.model.BoundedContextBaseDescriptor</class>
         <class>org.jqassistant.plugin.contextmapper.model.BoundedContextDefinesDependency</class>

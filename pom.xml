@@ -13,7 +13,7 @@
 
     <url>http://jqassistant.org/</url>
     <description>
-        Context Mapper Plugin for jQAssistant.
+        The jQAssistant plugin providing a scanner for ContextMapper files and a renderer for ContextMapper diagrams.
     </description>
 
     <organization>
