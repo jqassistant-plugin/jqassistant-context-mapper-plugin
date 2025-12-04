@@ -18,7 +18,6 @@ import org.contextmapper.dsl.contextMappingDSL.UpstreamRole;
 import org.jqassistant.plugin.contextmapper.model.BoundedContextBaseDescriptor;
 import org.jqassistant.plugin.contextmapper.model.BoundedContextDependencyDescriptor;
 import org.jqassistant.plugin.contextmapper.model.BoundedContextDependencyType;
-import org.jqassistant.plugin.contextmapper.report.ContextMapperDiagram.ContextMapperDiagramBuilder;
 
 import java.util.Arrays;
 import java.util.Comparator;
@@ -98,7 +97,7 @@ public class ContextMapGenerator {
     }
 
     private ContextMapperDiagram convert(Result<? extends ExecutableRule> result) {
-        ContextMapperDiagramBuilder builder = ContextMapperDiagram.builder();
+        ContextMapperDiagram.ContextMapperDiagramBuilder builder = ContextMapperDiagram.builder();
 
         Set<BoundedContextBaseDescriptor> bCs = new TreeSet<>(Comparator.comparing(BoundedContextBaseDescriptor::getName));
 
